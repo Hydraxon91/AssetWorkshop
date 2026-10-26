@@ -1,5 +1,15 @@
 # Asset pipeline tools
 
+Execution policy: `docs/execution-modes.md`. These tools are the
+`scripted-disposable` path; none requires live MCP. Separate read-only inspection tools
+are listed in `docs/mcp-tools.md`.
+Version note: skill/handbook API claims were verified on Blender 5.2.2; the current
+workspace target is Blender 5.2.3. Re-verify version-specific enums and node/socket names
+on the installed build.
+Path note: examples below retain the `/Applications/Blender.app/...` executable from the
+macOS origin. On Windows use the configured
+`C:/Program Files/Blender Foundation/Blender 5.2/blender.exe`; the arguments are the same.
+
 Current UV/bake caveats: see **Seat UV/texture findings — 2026-10-26** below.
 Use explicit `pack:true` or `preserve_layout:true` modes described below; legacy
 defaults are unchanged.
@@ -33,7 +43,9 @@ Body diagnostics, capture, UV audit, material runners, browser harness and GLB
 inventory helpers are local. `python3 launch.py --localhost` serves the standalone
 preview without game code. Local JS imports, offline material tests and preview
 HTTP serving have passed; this is not end-to-end rendering/generation validation.
-The pinned glTF validator is not provisioned; live ComfyUI generation, browser
+The pinned glTF validator is not provisioned in a fresh clone; a provisioned local
+copy may exist under `.dev-shots/asset-pipeline/validator/` (gitignored). See
+`docs/migration.md` for the local provisioning record. Live ComfyUI generation, browser
 rendering and delivery-contract/intake validation remain unverified. See
 `docs/migration.md` and `docs/pipeline-migration-inventory.md` for evidence/scope.
 Historical asset jobs may require uncopied asset histories; do not run them
@@ -286,6 +298,13 @@ untouched.
   replaces per-worker process wrappers. See [current worker path](../../docs/review-session-workflow.md).
 - `scripts/review_session.py` — resumable checkpoint/check/capture ledger and matched
   local HTML before/after sheet; see [workflow contract](../../docs/review-session-workflow.md).
+- `pipeline/primitive_recipe.py` — strict versioned box recipe, evaluated bake copies
+  and data-only runner presets; a reusable adapter, not a general modeller.
+- `scripts/primitive_recipe.py` — background-only `plan/build/prepare/check/capture`
+  CLI for that adapter; `plan` is plain Python/data-only.
+- `examples/primitive-recipe.fixture.json` — two-box technical fixture, not a stool.
+- `fixtures/test_primitive_recipe.py`, `fixtures/verify_primitive_recipe_blender.py` —
+  pure contract test and reopened source/corner/map fixture.
 
 - `profiles/` — versioned delivery profiles:
   - `opaque_prop.json`
@@ -960,6 +979,11 @@ pack saves a new checkpoint and refuses overwrite. Read `global_layout`, not the
 legacy per-object spacing fields. Legacy `pack:false` still uses shrink-in-place
 when `gaps` is enabled and does NOT certify a shared atlas. Concave chart boxes
 can conservatively fail even when actual contours are clear.
+
+Report gaps with their actual resolution: `global_layout.gap_lower_bound_px` uses
+the job's overlap resolution. Legacy keys such as `min_gap_px_2048` are explicitly
+2048-normalized diagnostics, not pixels at the current atlas size. For example,
+96 px at 2048 is 12 px at 256, not a 96 px gutter in a 256-square texture.
 
 **Preserved-layout bake:** `pipeline.py bake --job JOB.json` supports
 `preserve_layout:true`, e.g. `{"objects":["PartA","PartB"],

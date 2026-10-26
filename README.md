@@ -35,20 +35,28 @@ python -m unittest discover -s tools/blender-safe -p "test_*.py"
 ```
 
 Start agent sessions in this directory and read `AGENTS.md` before authoring.
+Execution mode is chosen from `docs/execution-modes.md` (default
+`scripted-disposable`); actual MCP tools are in `docs/mcp-tools.md`; the approved
+operator is in `docs/operators.md`.
 Review scripts and historical job paths before execution. Automated checks do not
 establish visual quality, editability or destination compatibility.
 
 ## Workspace map
 
 - `AGENTS.md`: lean scope, preservation, ownership and evidence contract.
-- `HANDOFF.md` and `BLENDER_OWNER.md`: current task routing and live ownership;
-  the active asset is the standalone seat, not the parked truck.
+- `BLENDER_OWNER.md`: current live-ownership card only; superseded cards are
+  archived at `docs/legacy/blender-owner-history-2026-10.md`.
+- `HANDOFF.md`: orientation and next boundary; it links to the current card rather
+  than naming its own active asset.
+- `docs/execution-modes.md`: single authority for scripted disposable Blender vs live MCP.
+- `docs/mcp-tools.md`: actual configured MCP tool names and read-only/mutating capabilities.
+- `docs/operators.md`: approved model/agent operator identities.
 - `.opencode/skills/gummy-3d-authoring/`: copied authoring skill and technical routes.
 - `tools/asset-pipeline/`: copied experimental tools and tests, not all yet portable.
 - `.dev-shots/`: ignored asset sources, historical builders, checkpoints and evidence;
-  current seat agreement is `.dev-shots/seat-01/brief.md`.
+  the last completed benchmark is under `.dev-shots/reusable-pipeline-test-01/`.
 - `docs/review-session-workflow.md`: current fixed worker/manifest/budget contract.
-- `docs/migration.md`: migration status, remaining verification and provenance.
+- `docs/migration.md`: historical migration record, remaining verification and provenance.
 - `docs/pipeline-migration-inventory.md`: whole-pipeline file coverage and external prerequisites.
 - `python3 launch.py --localhost`: serve the standalone preview without the game.
 

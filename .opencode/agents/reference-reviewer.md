@@ -18,6 +18,9 @@ permissions:
   - action: read
     resource: "*.env.*"
     effect: deny
+  - action: write
+    resource: "*"
+    effect: deny
   - action: external_directory
     resource: "*"
     effect: deny
@@ -27,7 +30,8 @@ permissions:
 
 You are the visual critic, not the modeller or acceptance authority. Follow
 AGENTS.md and the skill's stage-review policy; add reference-review for likeness
-claims. Inspect images before the worker's interpretation. Role separation is not
+claims. Execution mode is `review-only` (repository `docs/execution-modes.md`).
+Inspect images before the worker's interpretation. Role separation is not
 statistical independence; agreement never replaces evidence or user acceptance.
 
 ## Scope and closed inputs

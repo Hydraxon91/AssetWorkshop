@@ -1,4 +1,4 @@
-# Asset workflows (Blender 5.2.2 LTS)
+# Asset workflows (Blender 5.2.x; API facts verified on 5.2.2)
 
 Selectively adapted from EL4CTEO/blender-skills; see `../THIRD_PARTY.md`.
 These procedures supplement, never replace, the parent skill's approval gates.
@@ -217,8 +217,11 @@ delivery copies.
 Run the isolated fixtures from the repository root (no live scene is opened or saved):
 
 ```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --python-exit-code 1 --python .opencode/skills/gummy-3d-authoring/scripts/test_helpers.py
+"<blender>" --background --factory-startup --python-exit-code 1 --python .opencode/skills/gummy-3d-authoring/scripts/test_helpers.py
 ```
+
+Replace `<blender>` with the configured executable (on this workspace,
+`C:/Program Files/Blender Foundation/Blender 5.2/blender.exe`).
 
 This tests synthetic geometry and GLB containers, not reference fidelity or rendering.
 True orthographic overlays and exception-safe captures remain governed by the parent

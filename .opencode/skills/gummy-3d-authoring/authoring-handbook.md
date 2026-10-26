@@ -12,7 +12,10 @@ authority belongs to [reference review](references/reference-review.md). These
 take precedence over summaries here. Existing validation labels remain unchanged.
 
 Follow the repository's `AGENTS.md` and its task routes. Detailed technical preservation
-rules are in `docs/authoring-operations.md`. Historical section 15 is preserved in
+rules are in `docs/authoring-operations.md`. Execution-mode choice, live ownership and
+current MCP tool names are in `docs/execution-modes.md`, `docs/mcp-tools.md` and
+`BLENDER_OWNER.md`; this handbook is technical reference, not a second policy.
+Historical section 15 is preserved in
 `docs/legacy/agent-procedures.md` for technical lookup, not as active project policy.
 No game integration unless separately in scope. Repository paths below are relative to
 the project root, not this skill directory.
@@ -21,20 +24,23 @@ This procedure applies to any Blender asset in the project, not only bears. Char
 species-variant rig/export notes are in "Character and variant authoring" and
 "Deformation and export".
 
-Last reviewed: 2026-10-22. Update this line when the commands, scripts or delivery
+Last reviewed: 2026-10-26. Update this line when the commands, scripts or delivery
 contract below materially change; `AGENTS.md` remains the policy source.
 
 
 ## Inspect before editing
 
-1. Call `get_addon_status` and `get_scene_info`. Inspect Blender's current filepath,
-   dirty state, target objects, transforms, materials and modifiers. Do not assume
-   the active file is the asset mentioned in chat; do not open another file over
-   unsaved work without approval.
-2. Capture the target with `look`, explicitly passing target names. Establish a
-   recoverable checkpoint before destructive edits: save under a new incrementally named
-   file (`name_001.blend`, `name_002.blend`, ...) in the approved destination and never
-   overwrite an existing one. Do not rely on a saved `.blend` containing unsaved changes.
+1. Inspect the current filepath, dirty state, target objects, transforms, materials
+   and modifiers using the configured read-only summaries in `docs/mcp-tools.md`
+   (`get_objects_summary`, `get_object_detail_summary`,
+   `get_blendfile_summary_path_info`). Do not assume the active file is the asset
+   mentioned in chat; do not open another file over unsaved work without approval.
+2. Capture the target with the configured screenshot or viewport-render tool,
+   explicitly passing target names where the tool supports it. Establish a
+   recoverable checkpoint before destructive edits: save under a new incrementally
+   named file (`name_001.blend`, `name_002.blend`, ...) in the approved destination
+   and never overwrite an existing one. Do not rely on a saved `.blend` containing
+   unsaved changes.
 3. Identify reference landmarks: head/body ratio, shoulder width, arm slope,
    base shape and depth. Distinguish visible measurements from estimates; a single
    front reference does not establish side geometry.
@@ -274,9 +280,10 @@ Treat a new species/variant as a rig and delivery contract, not only a new silho
    than duplicating the rig for each look. Export only the intended meshes and slots.
 5. Write the asset manifest beside the delivery: tracked file, hash, scale/axis, bounds,
    mesh/skin/clip/material inventory, extensions, source and rights. Run
-   `node scripts/glb-inventory.mjs <asset>.glb` and `node --test tests`; a matching
-   game-side loader check is separate evidence. `src/assets.js` validates the manifest and
-   runtime counts; `assets/README.md` documents the schema.
+   `node scripts/glb-inventory.mjs <asset>.glb`; run the relevant `node --test` fixtures
+   under `tools/asset-pipeline/tests/` when the delivery contract is active. A matching
+   destination-side loader/manifest check is separate evidence; no local game path is
+   assumed.
 6. Add the species entry with `asset` and `assetManifest`; start from
    `docs/legacy/species-template.md` (historical destination context only). For Glass/Gummy/Bear, record which runtime path the asset
    uses: skinned GLB, 24-body metaball, or a future authored hybrid. Do not promise

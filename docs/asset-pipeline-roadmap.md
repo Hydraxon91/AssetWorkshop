@@ -1,5 +1,9 @@
 # Asset Pipeline Roadmap
 
+> Historical roadmap (2026-10-21). Tool names, add-on versions and phase statuses may be
+> stale. Current execution policy is `docs/execution-modes.md`; current MCP tools are in
+> `docs/mcp-tools.md`.
+
 Status: **Phase 3 implemented and verified**, with resource/density checks still advisory;
 **Phase 4 crate material-zone trial implemented**; **Phase 5 pilot accepted** (8 candidates,
 with corrected ceramic seed `20261021` rejected); **Phase 6 crate-only mapping trial
@@ -14,7 +18,7 @@ Date: 2026-10-21
 Owner: Hydraxon
 
 This is a separate roadmap for the Blender → AI-assisted materials → glTF delivery
-pipeline. It does not replace the game roadmap in `ROADMAP.md`.
+pipeline. It does not replace a destination game roadmap.
 
 ## Objective
 

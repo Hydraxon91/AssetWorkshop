@@ -1,8 +1,8 @@
 # AssetWorkshop handoff
 
 > **Archived (2026-10-23 watering can).** Not a current handoff. Use root `HANDOFF.md`,
-> `BLENDER_OWNER.md` and the active asset brief. Commands, checkpoints and MCP
-> precautions below apply only to that past task.
+> the current card in `BLENDER_OWNER.md`, and `docs/execution-modes.md`. Commands,
+> checkpoints and MCP precautions below apply only to that past task.
 
 Updated: 2026-10-23. Intended for a new OpenCode/Astra session on this machine.
 This is a state summary, not permission to bypass `AGENTS.md` or overwrite work.

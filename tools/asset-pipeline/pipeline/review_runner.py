@@ -45,6 +45,7 @@ def panel_plan(manifest, blender):
                        outputs=[path('comparison.html')], requires=previous, evidence={}))
     return dict(version=1, goal='Synthetic panel: sharp to rounded edges, matched evidence',
                 views=['three_quarter'], construction_stop=5, deadline=12,
+                execution_mode='scripted-disposable',
                 blender=str(Path(blender).resolve()), stages=stages)
 
 
@@ -60,10 +61,13 @@ def prepare(manifest, plan_file):
     if not manifest.is_relative_to(REPO_ROOT / '.dev-shots'):
         raise PipelineError('manifest must be under project .dev-shots')
     plan = review.load(plan_file)
-    if set(plan) != {'version', 'goal', 'views', 'construction_stop', 'deadline', 'blender', 'stages'}:
+    if set(plan) != {'version', 'goal', 'views', 'construction_stop', 'deadline',
+                     'execution_mode', 'blender', 'stages'}:
         raise PipelineError('invalid plan fields')
     if plan['version'] != 1 or not Path(plan['blender']).is_file():
         raise PipelineError('need version 1 and an existing explicitly supplied Blender executable')
+    if plan['execution_mode'] != 'scripted-disposable':
+        raise PipelineError('runner accepts scripted-disposable plans only; live MCP is parent-owned')
     stages, seen = [], set()
     for raw in plan['stages']:
         stage = dict(raw)
@@ -99,7 +103,8 @@ def prepare(manifest, plan_file):
     review.begin_budget(manifest, 'initial', plan['construction_stop'], plan['deadline'], 'Approved initial stage plan')
     document = review.load(manifest)
     document['runner'] = dict(blender=review.artifact(plan['blender']),
-                              plan=review.artifact(plan_file), stages=stages)
+                              plan=review.artifact(plan_file), stages=stages,
+                              execution_mode=plan['execution_mode'])
     review._update(manifest, document)
 
 

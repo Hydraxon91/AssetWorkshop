@@ -1,5 +1,9 @@
 # Phase 7 — harder benchmarks
 
+> Historical phase record. Tool names and add-on versions below may be stale; current
+> execution policy is repository `docs/execution-modes.md` and current MCP tools are in
+> `docs/mcp-tools.md`.
+
 Phase 7 will test the pipeline beyond the six-island crate:
 
 - 7A tool validation;

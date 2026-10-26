@@ -1,6 +1,6 @@
 ---
 name: gummy-3d-authoring
-description: Create, edit, inspect and export Blender assets through MCP. Use for 3D models, meshes, materials, UVs, baking, geometry nodes, reference matching and GLB work. Load only the active-stage references. Asset work does not authorise game integration.
+description: Create, edit, inspect and export Blender assets with scripted disposable Blender by default and live MCP for read-only inspection or an approved scoped edit. Use for 3D models, meshes, materials, UVs, baking, geometry nodes, reference matching and GLB work. Load only the active-stage references. Asset work does not authorise game integration.
 ---
 
 # Gummy 3D authoring
@@ -16,6 +16,11 @@ For a single scoped correction on an existing asset, read exactly these three an
 Everything else is opt-in when a condition in this file says it applies. Do not scan the
 31 references or load the handbook first.
 
+Default execution mode is `scripted-disposable`. Live MCP is parent-owned read-only
+inspection, or a parent-owned scoped-edit exception. Full policy: repository
+`docs/execution-modes.md` (read when the mode is unclear or a live edit is proposed;
+actual tool names are in repository `docs/mcp-tools.md`).
+
 Follow repository `AGENTS.md` for scope, safety and approval. Paths below are
 relative to this skill unless labelled repository-relative. This entry is a
 router, not a requirement to read every linked document. Select the relevant
@@ -28,8 +33,10 @@ bodywork, and assembly/material/UV/export guidance only as those tasks become ac
 ## Select the active stage
 
 Read [stage review](references/stage-review.md) when starting/resuming asset
-work: it owns progression, review points, current state and the verification
-matrix. For reference-led shaping or likeness claims also read
+work: it owns progression, review points, the current-state record format and the
+verification matrix. Actual live ownership and checkpoint identity are recorded in
+the repository `BLENDER_OWNER.md` and the asset brief. For reference-led shaping or
+likeness claims also read
 [reference review](references/reference-review.md). Reuse the existing approved
 agreement; do not restart a substantial brief for a local edit.
 
@@ -45,11 +52,15 @@ For runtime assets read [game asset contract](references/game-asset-contract.md)
 and select the destination contract separately. Dense sources require an approved
 purpose and budget. No destination authorizes integration by implication.
 
-## Live decision loop
+## Decision loop
 
-1. Inspect MCP addon status and scene information: actual filepath, unsaved state,
-   target identity, dependencies and shared data. Inspect the target with `look`.
-   Do not open another file over unrelated unsaved work.
+1. Choose the execution mode from repository `docs/execution-modes.md` (default
+   `scripted-disposable`). For a saved-file pass, verify the checkpoint path and
+   hash and use the staged runner. For `mcp-inspect`, check `BLENDER_OWNER.md` and
+   inspect the actual filepath, unsaved state, target identity, dependencies and
+   shared data with the read-only tools in `docs/mcp-tools.md`. Do not open another
+   file over unrelated unsaved work. Live editing is a parent-owned `mcp-edit`
+   exception, not a default.
 2. For shaping, build the reference plane first: for any supplied reference view, including a
    single side view, place a locked, uniformly scaled plane in the scene at a known
    model-units/px and judge the form against it. Use physical units only when
@@ -59,7 +70,9 @@ purpose and budget. No destination authorizes integration by implication.
    limitation and agree the substitute authority
    before building. Then inspect the reference and demonstrate the comparison
    relevant to the intended contour change. Distinguish observations, assumptions
-   and user decisions.
+   and user decisions. In a scripted pass the plane must be built and saved by an
+   approved stage; until a reusable reference-plane stage exists, reference-led
+   shaping that needs a plane is `mcp-edit` or an explicit development brief.
 3. Preserve the editable cage/profiles/paths and operands, with a recoverable
    new-name checkpoint before destructive work. Make one scoped control change.
 4. Inspect the affected result using the active task route. Shape work needs neutral
@@ -69,10 +82,10 @@ purpose and budget. No destination authorizes integration by implication.
    Name the changed contour and remaining discrepancy. Continue within the approved
    stage; stop at its agreed boundary or on a blocking failure.
 
-Live MCP Python supports construction, repetition, measurement and capture. It is
-not permission for blind whole-asset regeneration. If MCP disconnects, stop live
-editing. Scripts are not transactions: inspect partially applied state after errors.
-Restore temporary diagnostic state in `finally`. Respect user resource pauses.
+Live MCP Python is for scoped, already-proven operations and inspection; unproven
+native construction goes to a disposable process first. If MCP disconnects, stop
+live editing. Scripts are not transactions: inspect partially applied state after
+errors. Restore temporary diagnostic state in `finally`. Respect user resource pauses.
 
 ## Construction references — only the applicable category
 
@@ -99,10 +112,12 @@ Its limited human-assisted trial evidence is not autonomous-production validatio
 
 The preserved [authoring handbook](authoring-handbook.md) is an on-demand technical
 index. Read a named section, not the whole handbook. For standalone Blender work,
-do not load the game-verification skill unless integration is separately authorised.
+do not assume or request a game-verification skill unless integration is separately
+authorised; none is bundled here.
 
 | Active task | Technical reference |
 | --- | --- |
+| Execution mode or live ownership | Repository `docs/execution-modes.md`, `docs/mcp-tools.md`, `docs/operators.md` |
 | Existing-part identification or shared data | Handbook “Inspect before editing” and “Locating geometry before you touch it” |
 | Selection, origins, assembly controls or editing lag | [Editability verification](references/editability-verification.md) |
 | Shape health or repair | Handbook “Mesh health gate”, “Regression stop”; repository `docs/authoring-operations.md` |
@@ -110,14 +125,14 @@ do not load the game-verification skill unless integration is separately authori
 | Proving a required surface is seen, not buried | Sampled exposure: repository `tools/asset-pipeline/scripts/check_exposure.py` (see `docs/exposure-check-stage.md`); contact and interface checks stay separate |
 | Proving an edit did not delete the evaluated body | Evaluated retention: repository `tools/asset-pipeline/scripts/check_retention.py` (see `docs/evaluated-retention-audit.md`); authored preservation and `mesh_health` cannot see a modifier collapse |
 | Reference-faithful/measured matching | Reference review, then handbook “Reference calibration” and “Direct comparison with reference planes” |
-| Material-only change | [PBR](references/pbr-materials.md); preserve geometry and unrelated assignments; archived diagnosis notes only if needed (`docs/legacy/authoring-handbook-archived-sections.md`) |
+| Material-only change | [PBR](references/pbr-materials.md); preserve geometry and unrelated assignments; historical diagnosis notes only if needed (`docs/legacy/authoring-handbook-archived-sections.md`) |
 | UV template/island delivery | [UV templates](references/uv-template-delivery.md), [UV islands](references/uv-island-export.md) only as requested |
 | Bake/atlas | [Baking](references/texture-baking.md), [atlas delivery](references/atlas-delivery.md) |
 | Geometry Nodes | [Geometry Nodes](references/geometry-nodes.md) |
 | Libraries/generation | [Asset libraries](references/asset-libraries.md); approval before paid generation |
 | Rig/morph work | Handbook “Character and variant authoring” and “Deformation and export” |
 | Export/transfer | Handbook “Geometry transfer verification” and “Deformation and export”; repository `tools/asset-pipeline/README.md` |
-| Other specialised tooling | Archived tool catalogue (`docs/legacy/authoring-handbook-archived-sections.md`); select only the relevant linked procedure |
+| Historical specialised tooling | Archived catalogue (`docs/legacy/authoring-handbook-archived-sections.md`); historical reference only, not current policy. Prefer current repository tools. |
 
 ## Review and delivery
 

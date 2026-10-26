@@ -15,6 +15,11 @@ projects own integration. Do not read another repository to obtain instructions.
   pass names its review level, one visible outcome and “good enough” criteria at
   the intended viewing scale. A body-only gate blocks attachments. Checks never
   grant user acceptance; reviewers do not add stricter artistic gates afterward.
+- Preserve the requested outcome and operator. Do not replace asset delivery with
+  an expanding research programme. If the user requires a named model/agent to
+  perform the work, parent execution, static review or another model is not an
+  equivalent substitute. Return an unavailable operator as a blocker; a change
+  needs explicit approval and cannot establish the original model's capability.
 - Classify dimensions as hard constraints, scale anchors or provisional values.
   In approved reference-led work, provisional values may change to improve the
   inspected shape; record old/new values, reason and evidence for parent review.
@@ -48,6 +53,12 @@ projects own integration. Do not read another repository to obtain instructions.
 
 ## Delegation and Blender ownership
 
+- Execution mode is chosen from `docs/execution-modes.md`; the default is
+  `scripted-disposable`. Live MCP is parent-owned read-only inspection; subagents do
+  not receive MCP tools in the current harness. A scoped live edit is a parent-owned,
+  explicitly authorized exception. A brief that does not name a mode is incomplete.
+  Actual tool names are in `docs/mcp-tools.md`; the approved operator is in
+  `docs/operators.md`.
 - Unproven scripted native geometry runs first in an owned disposable process,
   not interactive Blender. Review/retain exact scripts and input hashes; use
   `tools/blender-safe/` for direct-mesh pilot preflight and timed process tests.
@@ -64,9 +75,19 @@ projects own integration. Do not read another repository to obtain instructions.
   mandatory health checks come before screenshot work, not after the step cap.
 
 - Parent uses short outgoing briefs; long templates are preparation checklists,
-  not prompts to paste wholesale. Include only consequential approval, ownership,
-  baseline/recovery, authority/protection, one outcome and minimum evidence/deadline.
-  Do not repeatedly make workers rediscover already established controls or history.
+  not prompts to paste wholesale. Supply consequential approval/ownership,
+  baseline/recovery, relevant references/protection, the exact reviewed entry point
+  and next operation, one outcome and minimum evidence/deadline. Check required
+  worker command/write scopes before assigning execution or source development;
+  do not assume an approval brief changes permissions. Workers verify consequential
+  facts, not the entire toolchain/history. Do not commission redundant readiness
+  probes or repeated discovery when current evidence already establishes them.
+- Reuse suitable reviewed operations. Keep infrastructure development separate from
+  asset operation: name the concrete missing capability, obtain bounded development
+  approval and test it before reuse. A frozen-tool/parameter-only pass changes data,
+  not implementation code or wrappers; return a required repair as tool development.
+  Scripts alone are not a completed modelling pass. Do not silently turn a blocked
+  asset task into another tool project or extend preparation by increasing the cap.
 - Review the WHOLE MODEL periodically, not just the last edited region: after a
   connected system is completed, before replication/stage progression, and when
   successive local edits yield little overall improvement. Use the latest selected
@@ -106,10 +127,13 @@ projects own integration. Do not read another repository to obtain instructions.
   environment/credential inspection unless explicitly included in approved scope.
   Final replies state completed, blocked or stopped; claim ongoing work only when
   a real background operation exists. Keep full logs in artifacts, not handoffs.
-- One live Blender owner across ALL projects, not just this Git tree. Consult
-  `BLENDER_OWNER.md`. Global MCP access does not grant ownership. Explicit handoff
-  requires previous worker stopped, filepath/dirty state inspected and checkpoint
-  recorded. Do not drive Blender concurrently, including during parent review.
+- One live Blender owner across all projects that share this machine, not just
+  this Git tree. Consult `BLENDER_OWNER.md`; it records this workspace's current
+  owner and is not a machine-global lock. Record the handoff wherever the other
+  project keeps its ownership card. Global MCP access does not grant ownership.
+  Explicit handoff requires previous worker stopped, filepath/dirty state inspected
+  and checkpoint recorded. Do not drive Blender concurrently, including during
+  parent review.
 - Keep one writer per assigned files. Record scoped Git state and ignored source
   checkpoints; Git cannot recover unsaved scenes. After interruption inspect actual
   partial state before retrying. No automatic rollback or replacement worker.
@@ -172,7 +196,10 @@ projects own integration. Do not read another repository to obtain instructions.
   LFS setup or binary commits. Source copies retain historical paths; inspect and
   relocate dependencies before claiming portability.
 - Report completed, failed, blocked and unverified criteria, changed paths, current
-  checkpoint/live state and next authorized action. Propose skill changes with
-  evidence; workers do not edit their own instructions.
+  checkpoint/live state and next authorized action. Separate toolchain execution,
+  requested-model operation, visual asset quality and user acceptance; supporting
+  checks cannot make an unmet central requirement an overall pass. Identify the
+  actual operator and any parent rescue. Propose skill changes with evidence;
+  workers do not edit their own instructions.
 - Destination contracts live under `contracts/`. Versioned copy + hashes is the
   delivery boundary; destination intake and integration remain separately approved.

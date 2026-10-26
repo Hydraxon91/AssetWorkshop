@@ -1,5 +1,9 @@
 # Resumable review evidence
 
+Execution-mode choice is in [`docs/execution-modes.md`](execution-modes.md). This
+runner is the `scripted-disposable` path; it does not drive live Blender and its plans
+must declare `execution_mode: scripted-disposable`.
+
 ## Bounded-task lessons — seat closeout 2026-10-26
 
 - Announce a new outcome/scope before expanding a repair into tool development;
@@ -14,7 +18,7 @@
   prove bake transfer or mip safety. Record selected and superseded evidence.
 
 
-## Current worker path (cleanup pass)
+## Current worker path
 
 Use **`scripts/review_worker.py`** for a reviewed disposable stage plan. Do not make
 each worker author save/check/capture wrappers or invoke Blender through shell strings.
@@ -36,11 +40,16 @@ capture helpers, hash the main scripts and inputs/outputs, and register their ow
 checkpoint/check/capture events. A failing check never becomes a passing ledger entry.
 
 The panel is a **synthetic fixture**, not a general modelling recipe. Generic plans
-can be supplied with `init --plan PLAN.json --manifest NEW.json`; they must name
-reviewed scripts, dependencies and outputs before execution. The runner is **not a
-sandbox**: scripts can access the OS. Permissions and an approved task remain required.
+can be supplied with `init --plan PLAN.json --manifest NEW.json`; they must declare
+`execution_mode: scripted-disposable` and name reviewed scripts, dependencies and outputs
+before execution. The runner is **not a sandbox**: scripts can access the OS. Permissions
+and an approved task remain required.
 The main script and plan/executable hashes are checked; imported helper dependencies
 are not an exhaustive captured software environment.
+
+Capture bookkeeping: a capture-only plan still needs a recorded checkpoint for its
+role; run a save stage or a continuation plan first. The capture metadata `view` must
+match the plan evidence label exactly, otherwise the runner rejects the evidence.
 
 ### One budget, one unit
 
@@ -73,7 +82,8 @@ No automatic rollback, delete, overwrite, alternate interpreter or shell fallbac
 Manifest updates use same-directory atomic replacement after an observed earlier
 service interruption; this still requires one writer.
 
-Only the existing fixed Python CLI permission is needed for worker execution. The
+Only the existing fixed Python CLI permissions (`review_worker.py`,
+`primitive_recipe.py`, `blender-safe/run.py`) are needed for worker execution. The
 trial01 `.blend/.json/.png/.html` shell-resource workarounds have been removed from the
 modeller agent; its unmatched-shell rule remains DENY. Existing user-saved approvals
 and unrelated permissions were not removed. Runtime verification is the fresh trial,
@@ -81,17 +91,20 @@ not a promise based solely on configuration text.
 
 ## Pass size — the fix for step-ceiling stops
 
-Eight seat-junction passes stopped at the agent ceiling, and the later ones stopped after
-inspection and numeric design without producing geometry. The briefs were too large, not
-the ceiling too small: design, construction, validation and evidence competed for the same
-allowance, and design always won.
+Eight seat-junction passes stopped at the agent ceiling; later passes stopped after
+inspection/numeric design without geometry. Oversized briefs and repeated setup were
+observed problems; this does not isolate model efficiency or prove the ceiling was
+the only cause. Parent supplies a ready operation and an early execution milestone,
+or explicitly scopes development rather than consuming a modelling pass on setup.
 
-Split work by **one artifact per pass**, and record it in the manifest:
+Use **one bounded outcome per pass**, with required checks/save/evidence. Split
+substantial design/development from execution when needed, not every command into
+another planning session. Existing approved plans may cover a complete small result:
 
 | Pass | Returns | Must not |
 | --- | --- | --- |
 | Design/decision | parameters, measurements, or a rejected candidate | commit geometry |
-| Build (disposable) | pilot blend + numbers for those parameters | re-choose the approach |
+| Build (disposable) | saved pilot + scoped checks/evidence for supplied parameters | re-choose the approach or develop wrappers |
 | Render/inspect | matched images of a saved candidate | change geometry |
 | Apply (live) | saved new-name checkpoint + checks | explore alternatives |
 
@@ -111,8 +124,8 @@ Rules that make this work:
 - Inherited measurements, rejected variants and closed decisions are **facts**. Re-deriving
   them is waste and is now called out in the modeller prompt.
 - If a pass cannot produce its one artifact within its allowance, that is a brief-size
-  signal: split again. Do not raise the step ceiling to compensate; the same failure
-  reappears one pass longer.
+  or setup signal: reduce scope or return the concrete blocker early. Do not simply
+  raise the ceiling or create another preparation pass without resolving the cause.
 - Record the artifact (parameters, pilot path, SHA) so the next pass resumes from it
   instead of repeating discovery.
 

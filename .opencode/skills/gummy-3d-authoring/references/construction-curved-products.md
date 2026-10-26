@@ -1,8 +1,29 @@
-# Curved products — unvalidated
+# Curved products — verified in one product pass
 
-**Status: unvalidated.** Project-authored candidate guidance, not a tested generator.
-Follow the main skill; use for moulded shells, curved housings and swept/revolved parts.
-Also read the category module when the product is furniture, a vehicle or architecture.
+**Status: verified in one reference-led product pass (2026-10-26); still candidate
+guidance, not a universal generator.** Follow the main skill; use for moulded
+shells, curved housings and swept/revolved parts. Also read the category module when
+the product is furniture, a vehicle or architecture.
+
+## Verification record — 2026-10-26
+
+Applied end-to-end to the standalone Frutiger Aero soap bottle: superellipse section
+loft for the body, revolved collar/stem, a user-edited flattened pump head fused with
+a swept spout, a conforming label film, full per-object UVs, and a material/render
+handoff. The user accepted the body, the pump correction and the materials. Evidence:
+`.dev-shots/frutiger-aero-bottle-01/soap-01/brief.md`; UV checkpoint
+`appearance/appearance_uv.blend`; final appearance checkpoint
+`appearance/appearance_final.blend`.
+
+What the pass supports: independent shoulder/base/label-panel control from the sparse
+loft; revolve/sweep for the pump; exact-union plus a BVH-selected local seam fillet
+for a user-edited sub-part; a thin conforming label film; and the scale/health checks.
+
+Limits: one asset, one operator pass, no motion or deformation, no independent second
+asset and no game integration. The pump seam is a Tier 3 close-up detail accepted at
+the target scale. This record verifies the guidance was usable for this product; it
+does not make the module a generator or certify every future form.
+
 
 ## Construction order — products and household housings
 
@@ -93,6 +114,9 @@ failing intersection before changing the host or trying another operation order.
 | Rim or cap shrinks away from a neighbour | Evaluated surface versus cage | Revise cap/support construction, not filler trim |
 | Sweep twists or intersects itself | Path curvature, frame orientation, section size | Test one bend with the actual cross-section |
 | Bevel vanishes near a cut | Thin features, nearby edges and overlap clamping | Diagnose the limiting feature; do not globally disable safeguards |
+| Boolean-union seam is a crease or pinch | The true intersection loop, not a bounding box | Select dual-surface seam edges; fillet only those, or accept the crease at the target scale |
+| Voxel remesh ripples a thin rim | Voxel size versus rim thickness | Keep the exact union; do not remesh a defining rim |
+| A flattened or shortened sub-part changes overall height | Whole-assembly bounds after the edit | Re-run the envelope/scale check, not just the edited part |
 
 ## 5. Change-of-method gate and checks
 
@@ -104,6 +128,48 @@ Acceptance evidence must show silhouette, opening, thickness, reflection continu
 and evaluated mating fit separately. A shiny hero view does not prove the hidden wall
 or the complete interface. Use [openings/glazing](openings-and-glazing.md) where applicable
 and the shared assembly checks. No detail, bake or export while required form is missing.
+
+## 6. User-edited sub-parts and local fusion (observed, candidate)
+
+When the user supplies an edited `.blend`, that edit is authority. Do not regenerate
+the part from older parameters or silently replace it with the builder's previous
+shape. Preserve the source, record its hash, and integrate it as a new-name checkpoint.
+
+For a sub-part that must become one visible prop:
+
+1. Keep the edited head and the mating part as sources; duplicate the head before
+   destructive work.
+2. Apply an exact Boolean union, clean tiny slivers (~1e-5), and confirm one closed
+   island.
+3. Fillet only the true intersection loop, selected by dual-surface proximity (BVH),
+   not a bounding box. A box also catches the spout tip and head rim and pinches.
+4. Keep source operands hidden and unselectable; they are recovery inputs, not visible
+   parts.
+5. Re-measure the whole assembly. Flattening or shortening one part changes total
+   height and the envelope check.
+
+A global bevel on the union can generate hundreds of degenerate faces; a voxel remesh
+fuses the seam but ripples a thin rim. Use remesh only when the rim is not a defining
+feature. If the remaining seam is a continuous crease, judge it at the target scale
+rather than reopening the geometry.
+
+**"One seamless prop"** means one visible object with no gap or overlap. A perfectly
+continuous smooth surface is a stronger requirement; state it explicitly in the brief.
+A small crease at a moulded junction can be acceptable at the target scale.
+
+## 7. Detail importance at the target scale
+
+Before repairing a seam, end cap or tiny fillet, measure its share of the intended
+screen height. A 0.8 mm crease on a 12.7 mm pump head of a 160 mm bottle is roughly
+1–2 px at one-third screen height; it is close-up-only. The general tier rule is in
+[stage review](stage-review.md). A gap, hole, non-manifold result, unsafe operation or
+user-named feature is never downgraded.
+
+A printed capacity is nominal, not the visible fill. Report capacity and fill fraction
+separately; do not gate the liquid volume to the label number.
+
+A single oblique handheld photo cannot calibrate orthographic scale. Use a declared
+envelope plus a labelled 10 mm grid proxy, not a stretched image plane.
 
 ## Related reading, not validation
 

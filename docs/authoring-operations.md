@@ -16,16 +16,20 @@ paths. Do not execute old jobs with absolute game-repository paths blindly.
 
 ## Delegation and efficient inspection
 
-### Local Python + Blender MCP
+### Execution modes — scripted Blender and live MCP
 
-Use saved, parameter-driven builders for repeatable construction, Blender MCP for
-approved live inspection/targeted execution, and independent parent review. For a
-reviewed disposable stage plan use the [fixed worker path](review-session-workflow.md),
-not another worker-written process wrapper. Asset-local experiments/recovery scripts
-stay under `.dev-shots/<asset>/scripts/`; reusable builders/tests belong in
-`tools/asset-pipeline/fixtures/`. Shared Blender inspection/capture helpers belong in
-`tools/asset-pipeline/scripts/` (not the repository-root preview `scripts/`). Never
-blindly rerun historical builders against live state.
+Default: `scripted-disposable` (saved file, owned background process). Use saved,
+parameter-driven builders for repeatable construction, and live MCP only for parent-owned
+read-only inspection of the user's actual scene or a parent-owned approved scoped edit.
+Subagents do not receive MCP tools in the current harness. Full policy:
+[`docs/execution-modes.md`](execution-modes.md); actual tool names:
+[`docs/mcp-tools.md`](mcp-tools.md). For a reviewed disposable stage plan use the
+[fixed worker path](review-session-workflow.md), not another worker-written process
+wrapper. Asset-local experiments/recovery scripts stay under `.dev-shots/<asset>/scripts/`;
+reusable builders/tests belong in `tools/asset-pipeline/fixtures/`. Shared Blender
+inspection/capture helpers belong in `tools/asset-pipeline/scripts/` (not the
+repository-root preview `scripts/`). Never blindly rerun historical builders against
+live state.
 
 For reference-driven curved forms, prove exterior silhouette before introducing
 wall thickness, detailed lip topology, UVs or export constraints. An exterior-only

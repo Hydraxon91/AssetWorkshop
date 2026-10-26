@@ -1,8 +1,9 @@
 # Whole authoring pipeline migration inventory
 
 > **Archival copy inventory.** Records what was copied out of the game repository and what
-> stayed external. Current destination choice, asset work and execution contracts live in
-> `AGENTS.md`, the active asset brief and `docs/review-session-workflow.md`.
+> stayed external. Current authorization and live state live in `AGENTS.md` and
+> `BLENDER_OWNER.md`; execution policy is `docs/execution-modes.md`; evidence mechanics are
+> in `docs/review-session-workflow.md`.
 
 This is file/dependency coverage, not end-to-end operational validation. Original
 game-repo files remain preserved; no legacy workflow deletion is authorized by this

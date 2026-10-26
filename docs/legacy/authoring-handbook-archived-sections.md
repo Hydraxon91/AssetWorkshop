@@ -3,12 +3,13 @@
 > **Archived 2026-10-25.** Moved verbatim out of the live handbook to keep the active
 > skill small. These sections duplicate `references/stage-review.md`, catalogue optional
 > or old tooling, or describe completed truck/game work. Not current instruction; consult
-> only when a skill route explicitly points here.
+> only when a skill route explicitly points here. Execution policy has moved to
+> `docs/execution-modes.md`; any "live MCP first/default" wording below is historical.
 
 ## Game-first destination
 
 Runtime game assets are the default across every construction category. Read the shared
-[game-asset contract](references/game-asset-contract.md) before the construction brief
+[game-asset contract](../../.opencode/skills/gummy-3d-authoring/references/game-asset-contract.md) before the construction brief
 and applicable module. It is **unvalidated** guidance, not a guarantee of performance.
 Agree role, camera/screen coverage, instances, geometry/material/texture budgets and
 required motion first. Prefer modest editable sources and budgeted delivery copies;
@@ -36,7 +37,7 @@ Changing an existing brief's fidelity requires approval and invalidates affected
 claims; it does not retroactively turn failed benchmarks into successes.
 
 For assisted stylized background props read
-[stylized game props](references/stylized-game-props.md), then the applicable construction
+[stylized game props](../../.opencode/skills/gummy-3d-authoring/references/stylized-game-props.md), then the applicable construction
 module. This route is **partially verified only for one human-assisted DeepSeek beanbag
 trial**; the general method, independent/autonomous production, broader use and a
 higher-tier control remain unvalidated. It prioritizes useful human art-direction checkpoints,
@@ -82,7 +83,7 @@ deformation and folds. Test the seat/contact transition first: subtracting a cav
 a smooth primitive can read as a rigid bowl rather than a yielding fabric form.
 
 Before building, check supplied views for design contradictions as well as scale using
-the [construction brief](references/construction-brief.md). When motion is requested,
+the [construction brief](../../.opencode/skills/gummy-3d-authoring/references/construction-brief.md). When motion is requested,
 use its unvalidated control-selection guide and short motion contract: rest/recovery,
 allowed combinations, support/contact and prohibited outcomes. Choose controls before
 detail; after primary-form approval, prove one moving region before replication or rig
@@ -102,13 +103,13 @@ Load more than one module when the asset contains different construction systems
 
 | Form / task | Construction reference | Difficult test before detail | Status |
 | --- | --- | --- | --- |
-| Upholstery, beanbags, cushions, fabric | [Soft goods](references/construction-soft-goods.md) | Loaded seat/contact-to-back transition | unvalidated |
-| Moulded shells, flowing continuous surfaces, swept/revolved products | [Curved products](references/construction-curved-products.md) | Tightest curvature, rim and opening | unvalidated |
-| Cars and other vehicles | [Vehicles](references/construction-vehicles.md) | Arch/fender/body interface and wheel clearance | unvalidated |
-| Houses, buildings, architectural shells | [Buildings](references/construction-buildings.md) | Wall/opening/roof junction with thickness | unvalidated |
-| Human-like characters | [Humanoids](references/construction-humanoids.md) | Characteristic proportions and required joint bend | unvalidated |
-| Animals and species-based creatures | [Animals](references/construction-animals.md) | Species silhouette, shoulder/haunch and articulation | unvalidated |
-| Timber/metal furniture and rigid frames | [Rigid furniture](references/construction-rigid-furniture.md) | Seat/back/frame joint and ground contact | unvalidated |
+| Upholstery, beanbags, cushions, fabric | [Soft goods](../../.opencode/skills/gummy-3d-authoring/references/construction-soft-goods.md) | Loaded seat/contact-to-back transition | unvalidated |
+| Moulded shells, flowing continuous surfaces, swept/revolved products | [Curved products](../../.opencode/skills/gummy-3d-authoring/references/construction-curved-products.md) | Tightest curvature, rim and opening | unvalidated |
+| Cars and other vehicles | [Vehicles](../../.opencode/skills/gummy-3d-authoring/references/construction-vehicles.md) | Arch/fender/body interface and wheel clearance | unvalidated |
+| Houses, buildings, architectural shells | [Buildings](../../.opencode/skills/gummy-3d-authoring/references/construction-buildings.md) | Wall/opening/roof junction with thickness | unvalidated |
+| Human-like characters | [Humanoids](../../.opencode/skills/gummy-3d-authoring/references/construction-humanoids.md) | Characteristic proportions and required joint bend | unvalidated |
+| Animals and species-based creatures | [Animals](../../.opencode/skills/gummy-3d-authoring/references/construction-animals.md) | Species silhouette, shoulder/haunch and articulation | unvalidated |
+| Timber/metal furniture and rigid frames | [Rigid furniture](../../.opencode/skills/gummy-3d-authoring/references/construction-rigid-furniture.md) | Seat/back/frame joint and ground contact | unvalidated |
 
 A wooden chair routes to rigid furniture; a moulded chair also loads curved products;
 a beanbag routes to soft goods. An upholstered frame loads furniture plus soft goods.
@@ -149,8 +150,8 @@ do not install another router, change the MCP backend or replace project safety 
 ## Optional workflows and tools
 
 For related props, materials, sprites or UI-art states, read
-[asset families](references/asset-families.md). For approved dynamically lit sprites or
-animated sheets, also read [sprite normals](references/sprite-normals.md). Both are
+[asset families](../../.opencode/skills/gummy-3d-authoring/references/asset-families.md). For approved dynamically lit sprites or
+animated sheets, also read [sprite normals](../../.opencode/skills/gummy-3d-authoring/references/sprite-normals.md). Both are
 **unvalidated** source-production guidance, not installed tools or authorization for
 game integration. They supplement construction/material gates, not replace them.
 
@@ -171,20 +172,20 @@ or destination-engine verification. Inherited zero-area geometry remains a deliv
 finding, not permission to change a protected source or waive acceptance.
 
 For shared-atlas delivery copies, selectable atlas/guide resolutions and staged publication,
-follow [references/atlas-delivery.md](references/atlas-delivery.md). Existing source UVs and
+follow [references/atlas-delivery.md](../../.opencode/skills/gummy-3d-authoring/references/atlas-delivery.md). Existing source UVs and
 materials stay protected; failed unwraps are diagnostics, not accepted deliveries. The default
 generation guide is 1280²; resolution changes do not authorize a different UV layout.
 
 For a paint template or UV wireframe delivery, follow
-[references/uv-template-delivery.md](references/uv-template-delivery.md): decode saved images,
+[references/uv-template-delivery.md](../../.opencode/skills/gummy-3d-authoring/references/uv-template-delivery.md): decode saved images,
 record the exact source/UV fingerprint and inspect a same-resolution albedo overlay. A PNG
 header or old filename is not evidence that a guide is valid or current.
 For island ids, zone/id maps, per-island masks and label manifests, follow
-[references/uv-island-export.md](references/uv-island-export.md): render per object, never
+[references/uv-island-export.md](../../.opencode/skills/gummy-3d-authoring/references/uv-island-export.md): render per object, never
 merge separate UV spaces, and never invent island part names.
 
 For automatic semantic-naming experiments, use
-[references/semantic-uv-prototype.md](references/semantic-uv-prototype.md). The prototype
+[references/semantic-uv-prototype.md](../../.opencode/skills/gummy-3d-authoring/references/semantic-uv-prototype.md). The prototype
 prepares multi-view, face-grounded evidence and sampled shell pairing; its 24-island vehicle
 development benchmark is not a general naming guarantee or an unattended vision service.
 For same-asset held-out checks, `scripts/uv_semantic_holdout.py` separates prediction freezing,
@@ -228,7 +229,7 @@ from the closest intended views. Atlas size reductions do not prove adequate tex
 density, and a successful bake does not prove faithful transfer of every channel.
 
 For the standalone UV sheet renderer, gate and optional per-chart repair workflow, follow
-[references/uv-layout-extractor.md](references/uv-layout-extractor.md). Those tools are
+[references/uv-layout-extractor.md](../../.opencode/skills/gummy-3d-authoring/references/uv-layout-extractor.md). Those tools are
 external and do not authorize game integration, material transfer or a bake.
 The local line-guide CLI accepts `--placements` for explicit reviewed UV rectangles,
 per-placement masks and source-object affine mappings; see its README. Raster island
@@ -237,25 +238,25 @@ process_sticker_sheet.py` supports closed-white-border sticker extraction and op
 colour grading, with saved-colour/alpha fixtures in `test_sticker_processing.py`.
 It is not general segmentation; binary-alpha edges still need close-up visual review.
 
-Read [references/asset-workflows.md](references/asset-workflows.md) for hard-surface
+Read [references/asset-workflows.md](../../.opencode/skills/gummy-3d-authoring/references/asset-workflows.md) for hard-surface
 modifier/shading choices, UV preparation, asset budgets and the local reporting tools.
 Load the focused references when the task needs them:
 
-- [references/assembly-verification.md](references/assembly-verification.md): mandatory
+- [references/assembly-verification.md](../../.opencode/skills/gummy-3d-authoring/references/assembly-verification.md): mandatory
   acceptance loop for assembly edits, structural completeness, connections, neighboring
   clearances and protected-surface preservation. Apply before calling a stage verified.
-- [references/pbr-materials.md](references/pbr-materials.md): Principled values, color
+- [references/pbr-materials.md](../../.opencode/skills/gummy-3d-authoring/references/pbr-materials.md): Principled values, color
   spaces, ORM, normals, alpha, view transforms and glTF material export.
-- [references/texture-baking.md](references/texture-baking.md): high-to-low and
+- [references/texture-baking.md](../../.opencode/skills/gummy-3d-authoring/references/texture-baking.md): high-to-low and
   procedural-to-texture baking, cages, map setup and the 5.2.2 bake API split.
-- [references/openings-and-glazing.md](references/openings-and-glazing.md): finding an opening's
+- [references/openings-and-glazing.md](../../.opencode/skills/gummy-3d-authoring/references/openings-and-glazing.md): finding an opening's
   rim in a shelled body, building panes from it, sealing and occlusion checks, and the glass
   material choice. Load for windows, windscreens, lenses and grilles.
-- [references/geometry-nodes.md](references/geometry-nodes.md): editable parametric
+- [references/geometry-nodes.md](../../.opencode/skills/gummy-3d-authoring/references/geometry-nodes.md): editable parametric
   sources, fields/domains, modifier inputs, instancing and evaluated export.
 
 These are selectively adapted from EL4CTEO/blender-skills for Blender **5.2.2 LTS**;
-see [THIRD_PARTY.md](THIRD_PARTY.md) for the pinned source and MIT notice.
+see [THIRD_PARTY.md](../../.opencode/skills/gummy-3d-authoring/THIRD_PARTY.md) for the pinned source and MIT notice.
 This skill and `AGENTS.md` remain authoritative. Helpers never authorize repairs,
 applying modifiers, exports or game integration. Do not install the upstream suite,
 run its installer, or import its web compression defaults automatically.
@@ -424,7 +425,7 @@ do not authorize edits; do not add wear or rework accepted geometry without appr
 ### Construction-method gate
 
 Before a primary form or change of construction method, complete
-[references/construction-brief.md](references/construction-brief.md). Choose from geometric
+[references/construction-brief.md](../../.opencode/skills/gummy-3d-authoring/references/construction-brief.md). Choose from geometric
 drivers, compare the main alternative and test the difficult section/interface first.
 Reuse the brief for incremental edits; do not repeat it before every vertex movement.
 Changing methods does not reset the criterion's attempt budget. The brief must also decide
@@ -439,7 +440,7 @@ material boundaries and seams for the intended delivery before multiplying compo
 Classify the form first (fabricated hard surface, moulded product, or soft goods) and settle
 primary silhouette, major sections, thickness and ground/contact before bevel detail, seams,
 materials or delivery exports. Choose views that answer the question rather than a fixed
-four-view ceremony: [stage review](references/stage-review.md) owns progression, review
+four-view ceremony: [stage review](../../.opencode/skills/gummy-3d-authoring/references/stage-review.md) owns progression, review
 levels and evidence sufficiency. `capture_review.py` provides cheap neutral captures and
 `check_shape_gate.py` an optional structural/freshness check with its own caller-specific
 approval format — neither replaces an inspected result or creates user approval.
@@ -475,7 +476,7 @@ is a proposed design choice, not an automatic response to a diagnostic failure.
    collections. Inspect existing collection-boolean consumers before adding operands; never
    put a new cutter into a shared collection merely because it is named `Cutters`. Apply only
    when approved. Build flares and trim separately so their edits do not reshape the shell.
-   Glazed openings follow [references/openings-and-glazing.md](references/openings-and-glazing.md):
+   Glazed openings follow [references/openings-and-glazing.md](../../.opencode/skills/gummy-3d-authoring/references/openings-and-glazing.md):
    the pane is built from the opening's rim loop, not floated over it.
 5. When salvaging a model, keep the parts that match the references. Hide, do not delete,
    a replaced shape and use it as a size guide.
@@ -538,7 +539,7 @@ is a proposed design choice, not an automatic response to a diagnostic failure.
 
 ## Inspect the result
 
-Use the [stage-review matrix](references/stage-review.md) for targeted construction
+Use the [stage-review matrix](../../.opencode/skills/gummy-3d-authoring/references/stage-review.md) for targeted construction
 views or stage-acceptance views. Compare against the reference rather than declaring
 success from tool output. Use explicit targets so unrelated objects do not spoil framing.
 Judge transmission, highlights and colour in separate material/rendered views. Keep a
@@ -607,7 +608,7 @@ unrelated lighting or cameras to conceal shape defects.
 
 Coverage is sample-level, not blanket asset or exporter certification; the exercised
 providers and trial dates are recorded in `docs/3d-authoring-notes.md`.
-Follow [references/asset-libraries.md](references/asset-libraries.md) for provider-specific
+Follow [references/asset-libraries.md](../../.opencode/skills/gummy-3d-authoring/references/asset-libraries.md) for provider-specific
 arguments, transform preservation, animation checks and resource safeguards. Treat each
 new library asset as untrusted until checked:
 

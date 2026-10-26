@@ -1,5 +1,9 @@
 # DeepSeek image/text authoring pilot record
 
+> Historical pilot record. Model identities below were those available at the time. The
+> current approved operator is `deepseek/deepseek-flash`; see repository
+> `docs/operators.md`.
+
 Model requested by user: OpenCode Go `deepseek-v4.1-flash#low`.
 These are capability trials, not production assets or general reliability proof.
 

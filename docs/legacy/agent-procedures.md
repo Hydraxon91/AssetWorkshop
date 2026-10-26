@@ -3,8 +3,9 @@
 > **Archived (2026-10-25).** Retained for provenance and original section numbering.
 > Do not load this as current instructions: `AGENTS.md` owns safety/scope, the skill's
 > `references/stage-review.md` owns progression, and `BLENDER_OWNER.md` plus the asset
-> brief own current state. Game-repository and watering-can statements below belong to
-> their original tasks.
+> brief own current state. Execution policy has moved to `docs/execution-modes.md`; the
+> "live MCP default" statements below are historical and not current. Game-repository and
+> watering-can statements below belong to their original tasks.
 
 Read the sections routed by `AGENTS.md`, not this whole reference. Paths are
 repository-relative. The authoring skill's `references/stage-review.md` owns

@@ -5,17 +5,23 @@ Updated 2026-10-26. Orientation only; AGENTS.md owns safety/authorization.
 ## Resume without stale instructions
 
 1. Read `AGENTS.md` and [BLENDER_OWNER.md](BLENDER_OWNER.md).
-2. Read the active [seat brief](.dev-shots/seat-01/brief.md), not old ownership
-   cards. Before Blender work inspect actual live filepath/dirty state; a previous
-   clean observation is not proof of the present scene.
-3. Load `gummy-3d-authoring` and only current-stage routes. Do not import instructions
+2. Read the current card in `BLENDER_OWNER.md`, not historical sections or old
+   ownership cards. The seat and truck records are historical. Before Blender work
+   inspect actual live filepath/dirty state; a previous clean observation is not
+   proof of the present scene.
+3. Load `gummy-3d-authoring` and only current-stage routes. Choose an execution
+   mode from `docs/execution-modes.md`; actual MCP tools are in `docs/mcp-tools.md`;
+   the approved operator is in `docs/operators.md`. Do not import instructions
    from another repository or load a game-specific destination contract by default.
 
-## Active asset and next boundary
+## Current state and next boundary
 
+- **No active asset; owner none.** Last completed: stool A/repeat-A/B benchmark
+  (parent-executed; the approved operator was not invoked). See the current card in
+  `BLENDER_OWNER.md` and [results](docs/reusable-asset-pipeline-test/results.md).
 - **Seat-01 learning pass is stopped**, after UV repack and basic procedural textures.
-  Current appearance checkpoint: `seat_01_uv_08_baked_review.blend`; UV source uv_05.
-  See the seat brief's current-state card; earlier Stage 2b repair instructions are historical.
+  Its checkpoint, UV source and repair history are historical. Earlier Stage 2b repair
+  instructions are not current.
 - Interactive Blender filepath/dirty state is unknown; it was not driven during these passes.
 - **Tooling closeout:** fixed-sheet packer tested; legacy UV CLI is not integrated with it.
   Opt-in `pack:true` UV and `preserve_layout:true` bake CLI modes are now implemented
@@ -33,12 +39,16 @@ Updated 2026-10-26. Orientation only; AGENTS.md owns safety/authorization.
 
 | Path | Role |
 | --- | --- |
-| `.opencode/agents/` | Bounded modeller and read-only reviewer prompts |
+| `.opencode/agents/` | Bounded modeller, read-only reviewer, and a non-production `probe-ladder` diagnostic |
 | `.opencode/skills/gummy-3d-authoring/` | Stage/task router and on-demand references |
+| `docs/execution-modes.md` | Scripted-disposable vs live-MCP authority |
+| `docs/mcp-tools.md` | Actual configured MCP tools and read-only/mutating capabilities |
+| `docs/operators.md` | Approved model/agent operator identities |
+| `BLENDER_OWNER.md` | Current live-ownership card only |
 | `tools/blender-safe/` | Static direct-mesh preflight and owned timed pilot runner |
 | `tools/asset-pipeline/` | Experimental authoring/verification tools; inspect before use |
 | `.dev-shots/` | Ignored sources, references, checkpoints and evidence |
-| `docs/3d-workflow-review.md` | Evidence behind workflow changes and known limits |
+| `docs/3d-workflow-review.md` | Historical evidence behind workflow changes and known limits |
 | `contracts/` | Opt-in delivery contracts; no default destination for standalone authoring |
 
 No commits/pushes, dependencies, services or integration are implied. Ignored binary

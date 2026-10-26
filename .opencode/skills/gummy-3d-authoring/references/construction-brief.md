@@ -9,6 +9,8 @@ does not authorise edits or add review gates beyond `stage-review.md`.
 Record the approved scope/fidelity and required cues, dimensions/axes/budget,
 reference authority and uncertainty, protected state, chosen editable controls,
 main construction risk and representative check, and agreed review boundary.
+Name the features that must read at the agreed view and any close-up-only defects
+accepted under the Stage review tier rule; a user-named feature is never downgraded.
 Link existing decisions rather than repeating them. Use the extended prompts below
 only where relevant risks require detail; naming table rows or repeating validation
 labels is not acceptance evidence. Motion needs a motion contract; static props do not.

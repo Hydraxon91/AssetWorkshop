@@ -5,10 +5,12 @@ through shape-keyed GLB delivery, clean import and standalone three.js review.**
 intervention was required. This verifies only that scoped assisted case, not autonomous
 modelling, general reliability across prop types or in-game readiness. Broader validation
 and a higher-tier control remain incomplete; DeepSeek is the acceptance lane for this
-project goal. See `docs/3d-authoring-notes.md` and the `ROADMAP.md` validation
-backlog. This status neither validates a generator nor relaxes any asset's acceptance criteria.
-Follow the main skill and applicable construction module. Live MCP is required for shape
-authoring; headless reference analysis and optional verification helpers are not a substitute.
+project goal. See `docs/3d-authoring-notes.md` for the recorded validation backlog.
+This status neither validates a generator nor relaxes any asset's acceptance criteria.
+Follow the main skill and applicable construction module. Shape authoring follows
+`docs/execution-modes.md`: scripted-disposable by default; live MCP is read-only
+inspection or an approved scoped edit. Headless reference analysis and optional
+verification helpers are not a substitute for inspection.
 
 ## 1. Agree a short work card
 
@@ -102,7 +104,7 @@ approval-gated export and clean-import/standalone-preview checks remain required
 shipping; this route does not bypass them or change their code. Never fabricate an
 approval record to make an exporter accept an asset.
 
-For game readiness use `gummy-game-verification` after integration approval: inspect actual
+For game readiness use a separately approved destination-verification pass after integration approval: inspect actual
 camera scale, lighting/quality, asset lifecycle, needed collision/navigation and measured
 performance at representative instances. A standalone preview is format/appearance
 evidence, not proof of in-game compatibility or frame time.

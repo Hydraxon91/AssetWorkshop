@@ -1,10 +1,11 @@
 # Migration status — historical copy record (2026-10-23/25)
 
 > **Archival, not current state.** This records how the authoring tools/skill were copied
-> out of GummyBearTest and the portability checks of that phase. Current asset work is the
-> standalone seat (`.dev-shots/seat-01/brief.md`), current live identity is
-> `BLENDER_OWNER.md`, and current execution/evidence is `docs/review-session-workflow.md`.
-> Watering-can paths and "live Blender" statements below describe that migration moment.
+> out of GummyBearTest and the portability checks of that phase. Current live ownership is
+> the current card in `BLENDER_OWNER.md`; current execution policy is
+> `docs/execution-modes.md`; evidence mechanics are in
+> `docs/review-session-workflow.md`. The seat work and watering-can paths below describe
+> that migration moment, not current authorization.
 
 Source: GummyBearTest HEAD `39cb88a7e91ef2c7c28d8a6d3cf07e5b9fcabbbc`,
 with unrelated local game/doc changes preserved. Copy-only migration; no commit,

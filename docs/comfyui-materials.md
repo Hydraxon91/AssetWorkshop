@@ -6,6 +6,11 @@ and generated-material quality have not been validated in AssetWorkshop. Do not
 contact or start ComfyUI without a later approved test. Historical results below
 are not fresh live-service acceptance.
 
+**Update 2026-10-26:** a separately approved live Qwen 2.1 image-edit sticker run
+succeeded for the soap-bottle label (`appearance/qwen/run-001`): one 1024² output,
+110 s, status success, text intact. That validates only the Qwen image-edit path for
+this label; StableMaterials live PBR generation remains deferred and unvalidated.
+
 Operating notes for the StableMaterials and Qwen runners, and for applying generated
 PBR maps in Blender. This file holds the details and the failure modes; `AGENTS.md`
 and the authoring skill keep only the rules and point here.

@@ -1,5 +1,10 @@
 # Sampled exposure check — implementation stage
 
+> Historical stage record (2026-10-25). Current execution policy is
+> [`docs/execution-modes.md`](execution-modes.md): run `check_exposure.py` in a
+> disposable background process. The live-MCP section below records a past read-only
+> session, not current procedure. “Active asset” references describe that past stage.
+
 ## Approved scope
 
 User approved, 2026-10-25: record the improvement plan, add a narrowly scoped
@@ -147,7 +152,7 @@ recorded) are retained as superseded drafts, not as current results.
 A post-refactor confirmation run reproduced both files' target classifications exactly
 (`shape01` fail 0/16 blocked by `Body_Enclosure`; `shape02` pass 16/16).
 
-### Live-session check (read-only)
+### Historical live-session check (read-only)
 
 Run inside the live Blender session through the MCP addon, on the open checkpoint
 `seat_01_stage2b_02.blend` (clean, 18 objects), using `cam_01_front_negY`'s actual view

@@ -2,7 +2,8 @@
 
 > **Archived (round62).** Historical truck ownership record, preserved as evidence.
 > It is not a live ownership card and must not be used as current authorization.
-> Current state is `BLENDER_OWNER.md`; active asset is the standalone seat.
+> Current state is the current card in `BLENDER_OWNER.md`; the seat/truck work below is
+> historical.
 
 Owner project: `/Users/hydraxon/Documents/GitHub/AssetWorkshop`.
 This file is a coordination record, not a technical lock.

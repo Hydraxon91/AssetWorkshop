@@ -2,103 +2,84 @@
 
 Project: `C:/Users/Hydra/Documents/GitHub/AssetWorkshop`.
 Coordination record, not a technical lock or permission to drive Blender.
+Current card only; superseded cards are archived at
+`docs/legacy/blender-owner-history-2026-10.md`.
 
-## Current state
+## Current state — soap-bottle appearance, Qwen sticker and exports complete (2026-10-26)
 
-### Latest appearance checkpoint (2026-10-26)
-- Quick mitigation afterward: `texture/verification_01/restricted_mips_01/` under
-  seat-01 contains only 2048/1024 maps plus explicit LOD 0–1 consumer policy.
-  Ten PNGs decoded/hash-recorded. Not a configured runtime sampler; no lower-mip
-  safety claim. Parent STOPPED, no Blender operations in this packaging pass.
-- Actual seat verification subsequently completed in owned disposable processes:
-  `.dev-shots/seat-01/texture/verification_01/VERDICT.md`. New candidate saved/reopened
-  with exact indexed geometry/UV preservation and global layout PASS. Shader-channel
-  p95 diagnostics pass at one whole-seat view; normal max 21.17 degrees remains.
-  Conservative mip-footprint test finds foreign-chart risk from 512 downward;
-  unrestricted mip-chain safety FAILED. No candidate promoted, old checkpoints untouched.
-  Parent STOPPED; no live Blender access or real background operation remains.
-- Subsequent tooling-only follow-up STOPPED: explicit UV packing/preserved-layout
-  bake modes implemented and fixture-tested, including reopened saved output.
-  Evidence: `.dev-shots/seat-01/tooling-tests/atlas_modes_04/`. Only owned disposable
-  Blender processes ran/exited; live state unknown. Seat checkpoint unchanged.
-- Tooling/documentation closeout completed after appearance work; no further Blender
-  execution or asset changes. Current brief and HANDOFF reconciled; failed/superseded
-  artifacts retained and labelled in `.dev-shots/seat-01/closeout-2026-10-26.md`.
-- Parent direct ownership; STOPPED after procedural texture/bake review. No interactive Blender access in this pass.
-- `.dev-shots/seat-01/checkpoints/seat_01_uv_08_baked_review.blend`: six visible baked parts, original meshes preserved but hidden in viewport/render, joined bake helper hidden. Previous uv_07 had originals and baked meshes simultaneously render-visible; its previews are superseded (z-fighting).
-- Procedural source: `seat_01_uv_06.blend`; frozen UV source uv_05 unchanged. Textures: `.dev-shots/seat-01/texture/bake_01/textures/` (2048 basecolor, roughness, metallic, tangent normal and ORM).
-- Inspected corrected whole/surface previews: `.dev-shots/seat-01/texture/bake_01/isolated_review_01/uv08_whole.png`, `uv08_surface.png`; capture metadata alongside. Basic dark fabric/noise grain, vinyl piping, steel rails. No texture-generation model/service used.
-- Verification limit: bake report's `uv_layer_preserved` checks bounds only, NOT exact corner mapping; no quantitative texture transfer or mip-bleed certification. Bake margin 12 px exceeds half the 9 px gap, so dilation collision risk remains unverified. No export/integration or final acceptance claimed.
+- **Owner: none.** No owned Blender process remains. No live MCP. The earlier
+  interactive Blender session (PID 27664, unsaved) was not driven and is no longer
+  running. The user's ComfyUI server was used through the HTTP Qwen runner only; it
+  was not started, restarted or reconfigured.
+- **Final appearance checkpoint:**
+  `.dev-shots/frutiger-aero-bottle-01/soap-01/appearance/appearance_final.blend`,
+  SHA256 `1a7fc773d028c3055cde1a121876a546b18d4f2d963cca943dc4546792bd7000`.
+  Clear aqua glass, blue liquid, dark-teal pump/collar, chrome stem/top rim, bubbles,
+  aqua studio world/floor and hero camera.
+- **UV checkpoint:** `appearance/appearance_uv.blend`, SHA256
+  `eb6f89f9bc4589dcf3f4355be09e62adc1587859c537f4645e2b4740ac8bb681`.
+  All visible objects have UVs; label dedicated 0–1; body/label gates clean; pump
+  has zero pixel conflicts but internal self-overlap from its Boolean topology.
+- **Qwen sticker:** `appearance/textures/label_aquaria_qwen_v1.png`, SHA256
+  `16fa13b589e3f83607f954d4d39f512fbbcf82d84cf553379d93bc121da16686`.
+  Live Qwen 2.1 image-edit run `appearance/qwen/run-001`: one 1024² output, 110 s,
+  success, 0 failures; text intact. The flat v3 label remains the fallback.
+- **Exports:** `exports/aquaria_soap_bottle_v1.glb` (glTF 2.0, SHA256
+  `737460eef6e6ce08ea89a60be83a1a47172a016b568d3b40826a284308bbcd5b`) and
+  `exports/aquaria_soap_bottle_v1.fbx` (SHA256
+  `65d83434da7eaed9b88766a88a2b9739107ecb6424ee0656e9e417e156ab8cde`).
+  Eight meshes; FBX embeds label/normal/baked-roughness textures and uses alpha for
+  glass/liquid; presentation and hidden pump sources excluded. Reimport report:
+  `exports/verify-imports.json`.
+- **Module status:** `references/construction-curved-products.md` marked verified for
+  this recorded product pass, with explicit scope/limits; not a generator.
+- **Final renders (bounded):** `appearance/final_renders/hero.png` and `label.png`;
+  64 samples, AgX Medium High Contrast; no render suite.
+- **Last completed:** Frutiger Aero soap-bottle shape, user pump correction, full UVs,
+  materials, Qwen sticker and FBX/GLB exports. Record:
+  `.dev-shots/frutiger-aero-bottle-01/soap-01/brief.md`.
+- **Next authorized action:** user review of the exports. No export acceptance,
+  game integration, rebake or further render suite without a new request.
+  StableMaterials live generation remains deferred.
+- **Last benchmark:** four-legged stool A / repeat-A / B parameter-only benchmark,
+  executed by the parent. The approved operator `deepseek/deepseek-flash` was **not
+  invoked**. This run proves tool reuse and parameter-only variation, not operator
+  capability. Result: `docs/reusable-asset-pipeline-test/results.md`; brief:
+  `docs/reusable-asset-pipeline-test/benchmark-brief.md`.
+- **Editable master A:**
+  `.dev-shots/reusable-pipeline-test-01/benchmark-stool-a-01/geometry/master.blend`,
+  SHA256 `0add93c0d87da4cc5836000e0e8c8dd67f79490830644119727c181dd630563e`.
+- **Baked A:**
+  `.dev-shots/reusable-pipeline-test-01/benchmark-stool-a-01/atlas/baked.blend`,
+  SHA256 `22c074d6149d0121d996608407d2ac10b9a573fdc58391cd97af92eaa27184c7`.
+- **B master:**
+  `.dev-shots/reusable-pipeline-test-01/benchmark-stool-b-01/geometry/master.blend`,
+  SHA256 `447738c0608fb5dc…` (truncated in the prior card; re-hash before use).
+- **A vs repeat-A:** equivalent within the declared tolerances (identical parts,
+  packed `AtlasUV`, 6e-8 max delta on the legacy `UVMap` layer, all five baked maps
+  pixel-identical). `.blend` bytes are not reproducible. B differs only in leg height,
+  leg z-origin and seat z-origin.
+- **Unverified:** live mouse/UI responsiveness, quantified shader-transfer error,
+  lower-mip safety, embedded texture packaging, production furniture quality and
+  byte-reproducible `.blend` output.
+- **Seat-01 and truck:** historical. Do not resume their earlier instructions from this
+  card; follow the archived ownership/history records if the user reopens them.
+- **Interactive filepath/dirty state:** unknown and untouched.
+- **Next authorized action:** user Gate A decision on the soap-bottle envelope.
+  No detail, appearance, export, integration, install or live MCP is authorized by
+  this card.
 
-## Historical UV checkpoint summary — superseded as current state
+## Environment
 
-- **Owner:** none; parent took direct ownership at user request and is now STOPPED (2026-10-26). No further delegation.
-- **Authoritative UV checkpoint:** `.dev-shots/seat-01/checkpoints/seat_01_uv_05.blend`, SHA256 `ade85271f0498db366c47ef0271b6d0a12ef3cc3fc28bb9adb831ddebe756bba`.
-- **Scope/result:** approved repack-only utilisation pass; 46.681% coverage, 188 islands, global bounding-box gap 9 px at 2048, zero global triangle overlaps, smallest island 6.120 px². Saved file reopened and checked. Geometry/material-slot/transform fingerprints unchanged from uv_04. No unwrap or mesh edits.
-- **Baseline preserved:** uv_04 SHA256 `d7ca03ded5275c1bb31395a57875abe06a4e242cd0b482b3c2f81ffacbf4f09b`.
-- **Live Blender:** not queried or driven in this pass; actual interactive filepath/dirty state unknown. All work used completed disposable background processes.
-- **Evidence:** `.dev-shots/seat-01/uv_repack/owned_01/verify_report.json` and `seat_01_uv_05_layout.png` (inspected). Ten packing tests pass. No baking/export/integration or user acceptance claimed. Next boundary: user review.
+- Windows Blender 5.2.3 LTS, explicit executable
+  `C:/Program Files/Blender Foundation/Blender 5.2/blender.exe`.
+- Execution modes: `docs/execution-modes.md`.
+- Actual MCP tools: `docs/mcp-tools.md`.
+- Approved operator: `docs/operators.md`.
 
-## Historical state — superseded 2026-10-26
-
-- **Owner:** none; all assigned workers STOPPED. Parent performed read-only inspection
-  for this cleanup on 2026-10-25 at approximately 21:26 local time.
-- **Live/checkpoint:** `.dev-shots/seat-01/checkpoints/seat_01_junction_candidate_03.blend`,
-  clean, 18 objects (6 meshes, 12 cameras), 0 modifiers, OBJECT mode; SHA256
-  `4ac614fe39b7aa450ebdbaa9a4852631c06c2e219925684cb33a9c05621b896b`.
-  Contains the reviewed junction fix (candidate_02) plus the reviewed shorter/wider base
-  (base_01 pilot adopted unchanged). Not saved over by the parent. Reinspect before use.
-- **Preserved earlier checkpoints:** intake `seat_01_junction_intake_01.blend`
-  (`a2512545…bd93f`, original user state), `seat_01_junction_candidate_02.blend`
-  (`dcaac190…df87`, junction only). Both bytes unchanged.
-- **Active asset:** standalone `seat-01`, Stage 2b; R1 withdrawn at the squab/backrest
-  interface, repair #4 OPEN. Current agreement/history/evidence: [seat brief](.dev-shots/seat-01/brief.md).
-- **Latest shape decision:** disposable shoulder-lift `pilot_03` was NOT integrated:
-  corner steps improved but a new outer-shoulder ridge regressed the visible form.
-  [Parent review](.dev-shots/seat-01/evidence/junction_candidate_01_pilot_03_after/parent_review.md).
-  Preserve that failed candidate and the prior repair/ceiling-stop history.
-- **Cameras:** saved `cam_05`/`cam_06` do not frame the junction. Use the recorded
-  temporary-view metadata, not camera names, when planning a matched comparison.
-  A surface-directed ray map did not prove the seam closed.
-- **Constraints:** text-only stylised seat authority, separate squab, full required
-  features; occupant 1.7–1.8 m and rail pitch 400 mm are scale anchors. Overall
-  dimensions remain provisional. Parent working cap 21k triangles / squab pair 8,600;
-  user's approximate 25k budget unchanged. No geometry progression is implied here.
-- **Tooling:** fresh synthetic workflow trial02 finished with 9/12 runner operations
-  and no rescue. This is not seat acceptance. [Current worker path](docs/review-session-workflow.md).
-  Agent model-turn ceiling and runner-operation budget are different units.
-- **Environment:** Windows Blender 5.2.3 LTS, explicitly supplied executable
-  `C:/Program Files/Blender Foundation/Blender 5.2/blender.exe`; MCP summary calls worked
-  at inspection. Do not reinstall/reconfigure the addon from historical protocol notes.
-- **Next boundary:** current request is instruction/record/script cleanup only.
-  Seat repair remains stopped; UV/detail/export/integration are not advanced by it.
-
-## Truck (parked, not current authorization)
-
-- **Last delivery:** `round68/out_01/truck_livery_baked_01.glb` (SHA
-  `12f1205b…c82fbaf`, 9.75 MB), re-import verified in Blender. Godot import deferred
-  by the user; no engine-side evidence exists.
-- **Editable master:** `.dev-shots/car_img2-01/gate1-ultrafast-01/truck_materials_windows_02.blend`
-  (SHA `ea191e71…f043f6`), unchanged.
-- **Provenance flag:** the UV candidate
-  `round66/pilot_body09/truck_uv_candidate_body09.blend` was **re-saved by the user at
-  13:42** (5,719,891 → 5,683,395 bytes; SHA now `d69d0367…a277ae`). The round66 UV
-  measurements, the guide `uv_sha256`, and the round68 bake were produced from the
-  earlier byte state. Treat their correspondence to the current file as **unverified**
-  until re-checked. No recorded hash for the candidate itself was contradicted.
-- Truck livery limits remain as documented: stripe breaks at island borders, roof
-  unstriped, 2048 PNG textures, no LOD/collision/performance data, no user acceptance.
-
-## Historical record — not current authorization
-
-- Full pre-cleanup ownership card: `.dev-shots/workflow-cleanup-03/source-before/BLENDER_OWNER.md`
-  (byte-preserved local archive). It contains the obsolete stage2b_02 filepath/hash,
-  old camera claims and the seven historical modeller ceiling stops; not a live card.
-
-- Earlier ownership cards and the watering-can handoff are archived under
-  `docs/legacy/`. They include superseded assets, approvals and restrictions; do not
-  resume those tasks from the archive.
+## Card policy
 
 Replace this card at each handoff; keep asset evidence/history in the brief's linked
-records, not a growing stack of ownership cards. One live owner globally, including
-parent inspection; follow AGENTS.md for handoff and timeout reconciliation.
+records or `docs/legacy/`, not a growing stack of ownership cards. One live owner across
+all projects that share this machine; follow `AGENTS.md` for handoff and timeout
+reconciliation.

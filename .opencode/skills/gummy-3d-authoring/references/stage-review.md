@@ -1,7 +1,9 @@
 # Stage, approval and evidence policy
 
 This is the single Blender progression/capture policy. `AGENTS.md` owns common
-safety. Technical references supplement this policy; they do not add per-edit
+safety. Execution-mode choice (scripted disposable vs live MCP) is in repository
+`docs/execution-modes.md`; this policy constrains a delegated stage but does not choose
+the mode. Technical references supplement this policy; they do not add per-edit
 approval gates. This policy does not grant permission to edit, export or integrate.
 Shape-first and inspect/revise are supported workflow principles, not proof that
 this agent setup is optimal. Exact budgets, retries and evidence layouts are local
@@ -31,6 +33,29 @@ Name one review level for the pass; these are not additional production stages:
 - **Local refinement:** junctions, shading and small surface defects, once primary
   form is good enough. A consequential primary-form regression takes priority again.
 
+### Visual importance at the agreed scale
+
+Judge a defect at the view where the asset is used, not only in a close-up.
+
+- **Tier 1:** silhouette, major masses, defining openings, support/contact.
+- **Tier 2:** features that read at the agreed view (label graphics, collar ribs,
+  a pump seam if it reads).
+- **Tier 3:** close-up-only seams, end caps, tiny fillets, fasteners.
+
+A Tier 3 issue does not block a Tier 1/2 gate when it is continuous and does not change
+the read; a gap/hole, non-manifold or unsafe result, a user-named feature or a Tier 1/2
+change is never downgraded. Record the acceptance and the target view. A close-up
+capture is diagnostic, not an automatic defect. Example: a 0.8 mm crease on a 12.7 mm
+pump head of a 160 mm bottle is roughly 1–2 px at one-third screen height.
+
+### Render budget
+
+Renders are evidence for a decision, not iteration fuel. Use the smallest set of views
+that answers the question (normally one full view plus one close-up; add a functional
+view only when it answers something new). Do not run a render suite or repeat beauty
+renders after every parameter tweak; re-render only when the change invalidates the
+evidence. Stop at the agreed gate.
+
 Before editing, record one visible outcome, governing views, intended scale/fidelity,
 required features/exclusions and the threshold for progression. A qualitative
 criterion is valid (for example, a continuous major outline in named views); do not
@@ -57,13 +82,23 @@ checks and an inspected comparison, not overlapping audits. Choose enough views
 for the question; broader review coverage and user acceptance remain separate.
 
 Allocate a construction/save deadline, evidence reserve and handoff within the
-configured ceiling. Numbers are task-specific defaults, not quality guarantees;
-parent may record adjustments within user authorization, never waive safety/gates.
-Workers cannot self-extend. At the deadline preserve safe partial work and return
-unmet criteria as failed/blocked/unverified instead of starting another iteration.
+configured ceiling for a complete small result, not just script preparation. For a
+ready-operation pass, agree an early first disposable-test/execution milestone;
+after essential ownership/input checks the worker invokes the supplied operation.
+If setup blocks it, return the specific blocker while decision budget remains.
+Explicit design-only work is not an execution result. Separate commands need not
+mean separate planning sessions. Numbers are task-specific, not quality guarantees;
+parent may adjust within authorization, never waive safety/gates. Workers cannot
+self-extend. At deadline preserve safe partial work and report unmet criteria,
+not another iteration. Record runner operations, model turns and elapsed time
+separately when measured; never infer one from another.
 
 Return STOPPED once saved, checked and visually assessed; report failed criteria
 honestly, without extra audits, invented assertions or easier substitute tests.
+Judge overall completion against the requested result/operator, not the easiest
+passing subsystem. Toolchain execution, named-model operation, visible asset quality
+and user acceptance are separate outcomes; parent-run fixtures do not validate an
+uninvoked model. Do not repeat completed work merely to inflate a supporting metric.
 
 Maintain one compact asset-local current record, preferably updating the existing
 brief rather than creating a parallel system. Update at consequential decisions,

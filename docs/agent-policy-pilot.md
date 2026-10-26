@@ -1,5 +1,9 @@
 # Agent policy pilot — partial results
 
+> Historical probe results. The configured modeller ceiling has since changed; verify the
+> current frontmatter before citing a step count. The 24-step results below describe the
+> tested configuration, not the current agent.
+
 ## Observed permission enforcement
 
 Fresh `modeller` child `ses_e982d6506ffeZ70JgcCdIkx4Vf` read its local definition,

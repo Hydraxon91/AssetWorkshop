@@ -2,8 +2,8 @@
 
 **Status: unvalidated.** Source-production guidance, not a generator or approval to
 redesign art. Follow the main skill and applicable construction modules. Use for related
-props, materials, sprites, icons or UI-art states; in-game verification remains with
-`gummy-game-verification` after integration is approved.
+props, materials, sprites, icons or UI-art states; in-game verification remains a separately
+approved destination pass after integration is approved.
 
 ## 1. Establish the family's contract
 

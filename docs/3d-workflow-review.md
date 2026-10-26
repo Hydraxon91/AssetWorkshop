@@ -2,9 +2,10 @@
 
 ## Current status
 
-2026-10-25 follow-up: active asset routing is now seat-01; truck is parked. Current
-ownership lives in `BLENDER_OWNER.md`, asset state in the seat brief, execution contract
-in `docs/review-session-workflow.md`. The older cleanup statement below describes its
+2026-10-25 follow-up: at that time, active asset routing was seat-01 and the truck was
+parked. Current live ownership is in `BLENDER_OWNER.md`; execution modes are in
+`docs/execution-modes.md`; the worker/evidence contract is in
+`docs/review-session-workflow.md`. The older cleanup statement below describes its
 own historical documentation pass, not today's live asset or next authorized action.
 See `docs/workflow-cleanup-audit.md` for the current overlap/retirement/consolidation map.
 
@@ -13,8 +14,9 @@ See `docs/workflow-cleanup-audit.md` for the current overlap/retirement/consolid
 2026-10-25 cleanup is documentation-only: role prompts shortened, an on-demand
 editability checklist added and stale ownership/handoff cards archived unchanged.
 No agent frontmatter/permissions, helper implementation or Blender state changed.
-The active asset and authorizations live in `HANDOFF.md`, `BLENDER_OWNER.md` and
-the linked truck brief, not the historical task instructions below.
+At that time the asset and authorizations lived in `HANDOFF.md`, `BLENDER_OWNER.md` and
+the linked truck brief, not the historical task instructions below. Current live
+ownership is the current card in `BLENDER_OWNER.md`.
 
 ## Truck editability lessons (rounds59–62)
 

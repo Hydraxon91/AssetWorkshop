@@ -57,7 +57,7 @@ Test padding/filtering/mips at actual runtime size, not just a full-size atlas p
 Record input/output hashes, generator settings/version, normal convention, alpha/frame
 mapping and capture names with provenance. Rejected maps remain diagnostics, not approved
 replacements. Standalone previews do not establish game support. After separately approved
-integration use `gummy-game-verification` for shader diagnostics, timed playback, relevant
+integration use a destination-verification pass for shader diagnostics, timed playback, relevant
 quality tiers, inspected in-game captures and performance where affected.
 
 ## Source reading

@@ -33,6 +33,21 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(state['deadline'], 12)
         self.assertEqual(len(review.load(self.manifest)['runner']['stages']), 9)
 
+    def test_plan_requires_scripted_execution_mode(self):
+        missing = review.load(self.plan)
+        missing.pop('execution_mode')
+        missing_path = self.root / 'missing-mode.json'
+        review.write_new(missing_path, missing)
+        with self.assertRaisesRegex(PipelineError, 'invalid plan fields'):
+            runner.prepare(self.root / 'missing-mode-session.json', missing_path)
+
+        invalid = review.load(self.plan)
+        invalid['execution_mode'] = 'mcp-edit'
+        invalid_path = self.root / 'invalid-mode.json'
+        review.write_new(invalid_path, invalid)
+        with self.assertRaisesRegex(PipelineError, 'scripted-disposable plans only'):
+            runner.prepare(self.root / 'invalid-mode-session.json', invalid_path)
+
     def test_no_caller_step_override(self):
         with self.assertRaises(PipelineError):
             review.status(self.manifest, 1)

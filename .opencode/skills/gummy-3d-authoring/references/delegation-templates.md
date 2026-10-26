@@ -26,20 +26,24 @@ supplied in conversation are not files: the parent must save them into the asset
 `references/` folder before briefing, or say explicitly that the worker cannot see
 them. Prefer the in-scene locked reference planes for shape judgement.
 
-Execution gate: unproven native geometry must first pass reviewed-script and
-disposable-process testing (`tools/blender-safe/README.md`, repository-relative).
-Keep exact script/input hashes and timeout result. Native construction, checks,
-save and capture are separate commands. A timeout is unknown/in-flight, never
-permission to retry. A passing process is not passing shape/health/preservation.
-Use one representative transition before a whole system. Do not spend the check
-reserve on screenshots or omit health checks at a call ceiling; shrink the task.
+Execution gate: a brief that does not name an execution mode is incomplete. Use
+`scripted-disposable` by default; live MCP is `mcp-inspect` (read-only) or a parent-owned
+`mcp-edit` exception. Full policy: repository `docs/execution-modes.md`. Unproven native
+geometry must first pass reviewed-script and disposable-process testing
+(`tools/blender-safe/README.md`, repository-relative). Keep exact script/input hashes and
+timeout result. Native construction, checks, save and capture are separate commands. A
+timeout is unknown/in-flight, never permission to retry. A passing process is not passing
+shape/health/preservation. Use one representative transition before a whole system. Do not
+spend the check reserve on screenshots or omit health checks at a call ceiling; shrink the
+task.
 
 ### Routine modeller brief (default outgoing prompt)
 
-Bounded-pass rule: one pass, one artifact. Design, build, render and apply are separate
-passes. Put already-established measurements, rejected variants and parent decisions in
-the brief as facts the worker must not re-derive. If the single artifact cannot fit the
-allowance, the brief is too big — split it rather than extending the step ceiling.
+Bounded-pass rule: one approved outcome with enough allowance to save, check and
+inspect it. Supply settled measurements/decisions, required operator and exact ready
+entry point; the worker must not rediscover them. Separate native commands do not
+require separate planning sessions. Isolate design/development only when needed;
+shrink an oversized assignment rather than extending a preparation-only loop.
 
 ```text
 Mode: [GEOMETRY | VERIFICATION | EDITABILITY | MATERIALS; exact allowed changes].
@@ -52,9 +56,11 @@ or judges likeness; verification/preservation briefs name the checkpoint instead
 Reference read FIRST: [form/likeness tasks only: state, in the handoff, what the
 governing view shows - proportions, landmark positions, angles, relative heights -
 before building; a path alone does not count as having read it].
-Approach: [SCRIPTED or INCREMENTAL MCP; one bounded batch, not guessed coordinates].
+Execution: [scripted-disposable (default), mcp-inspect, or mcp-edit; if mcp-edit, quote
+the ownership-card line, current filepath/dirty state, recovery checkpoint and save-as plan].
+Ready operation: [exact next command/parameters, or explicitly approved development].
 Completion: [new saved candidate + targeted checks + inspected comparison/provenance; actual result].
-Deadline: [save by step N; stop construction by step M; reserve evidence/handoff].
+Deadline: [early execution milestone, construction/save stop, evidence/handoff reserve].
 Stop/handoff: [regression/blocker rule, candidate/images/results, STOPPED/live state].
 ```
 
@@ -132,7 +138,9 @@ Do not demand a full delivery audit or an external reference for origin maintena
 
 ## Scripted and interactive specialists
 
-For now use one modeller with an explicit execution approach. Scripts suit repeatable
+Execution-mode selection is governed by repository `docs/execution-modes.md`; this section
+records the earlier specialist discussion and truck-pilot evidence, not a default. For now
+use one modeller with an explicit execution approach. Scripts suit repeatable
 construction, replication and measurements; incremental MCP suits visual control
 adjustment. Both can use Blender Python: the distinction is feedback cadence, not
 the programming language. Measurements alone do not establish either method's quality.
