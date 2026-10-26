@@ -1,0 +1,79 @@
+{
+  "1": {
+    "inputs": {"mode": "Standard (50 steps, quality)"},
+    "class_type": "LoadStableMaterials",
+    "_meta": {"title": "Load StableMaterials"}
+  },
+  "5": {
+    "inputs": {
+      "basecolor": ["9", 0],
+      "normal": ["9", 1],
+      "height": ["9", 2],
+      "roughness": ["9", 3],
+      "metallic": ["9", 4]
+    },
+    "class_type": "CombinePBRPreview",
+    "_meta": {"title": "PBR Preview Grid"}
+  },
+  "6": {
+    "inputs": {
+      "filename_prefix": "stablematerials_",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": ["5", 0]
+    },
+    "class_type": "SaveImageAdvanced",
+    "_meta": {"title": "Save Image (Advanced)"}
+  },
+  "8": {
+    "inputs": {"image": "barrel_wood_basecolor_pbr01_1024.png"},
+    "class_type": "LoadImage",
+    "_meta": {"title": "Load Image"}
+  },
+  "9": {
+    "inputs": {
+      "seed": 649860169638787,
+      "steps": 50,
+      "guidance_scale": 7.5,
+      "tileable": true,
+      "width": 1024,
+      "height": 1024,
+      "pipeline": ["1", 0],
+      "image": ["8", 0]
+    },
+    "class_type": "StableMaterialsFromImageResolutionV1",
+    "_meta": {"title": "Generate PBR (Image, Custom Resolution)"}
+  },
+  "10": {
+    "inputs": {
+      "filename_prefix": "material_basecolor",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": ["9", 0]
+    },
+    "class_type": "SaveImageAdvanced",
+    "_meta": {"title": "Save Image (Advanced)"}
+  },
+  "15": {
+    "inputs": {"filename_prefix": "material_normal", "images": ["9", 1]},
+    "class_type": "SaveImage",
+    "_meta": {"title": "Save Image"}
+  },
+  "16": {
+    "inputs": {"filename_prefix": "material_height", "images": ["9", 2]},
+    "class_type": "SaveImage",
+    "_meta": {"title": "Save Image"}
+  },
+  "17": {
+    "inputs": {"filename_prefix": "material_roughness", "images": ["9", 3]},
+    "class_type": "SaveImage",
+    "_meta": {"title": "Save Image"}
+  },
+  "18": {
+    "inputs": {"filename_prefix": "material_metallic", "images": ["9", 4]},
+    "class_type": "SaveImage",
+    "_meta": {"title": "Save Image"}
+  }
+}

@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+.dev-shots/
+*.blend
+*.blend1
+*.glb
+*.gltf
+*.bin
+*.env
