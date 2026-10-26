@@ -149,6 +149,13 @@ projects own integration. Do not read another repository to obtain instructions.
 
 ## Evidence and delivery
 
+- **UV islands before Qwen:** never submit a Qwen image-edit/generation job for a
+  surface before its UV layout exists, its islands are named in a reviewed layout,
+  and the job uses that layout or a reviewed island guide. Qwen produces texture
+  artwork, not UV work; it cannot replace an unwrap, island naming or placement.
+  This applies to every asset workflow. Stop and return the UV step as a blocker
+  rather than generating against an un-unwrapped or unnamed surface.
+
 - **Design connections; do not camouflage them.** Do not conceal gaps or
   disconnected parts with arbitrary blocks, shims, collars, tubes or other filler.
   Identify the actual host and intended load/assembly path, then correct the

@@ -469,6 +469,12 @@ canvas and images 2–10 as references. The shared runner drives it from a job J
 UV-guided sticker or texture set needs no new script. The API template is patched by node
 class, not by node id.
 
+**Precondition: UV islands first.** Generate Qwen textures only after the target
+surface has a current UV layout with named islands. Use the reviewed layout/line guide
+as the canvas, name each island in the prompt, and apply the returned artwork through
+that same layout. Do not run Qwen against an un-unwrapped or unnamed surface; return
+the UV step as a blocker. This applies to every asset workflow.
+
 ```bash
 python3 tools/asset-pipeline/scripts/run_comfy_workflow_qwen_image_edit.py \
   --job tools/asset-pipeline/examples/laptop-stickers-qwen.job.json \

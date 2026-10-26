@@ -19,12 +19,21 @@ not a rule that all openings or thickness must wait until a late step.
 | --- | --- | --- |
 | 1. Reference setup | Vehicle axes, view authority, hard dimensions/scale anchors, uniformly registered locked planes, uncertainty | Correct front/left/up projection and relevant landmarks; resolve consequential conflicts |
 | 2. Whole-vehicle blockout | Wheel proxies, wheelbase/track/ride height, body/cab/bed or trunk masses | Front, side, top and useful three-quarter; recognize vehicle character without details |
-| 3. Primary surfaces | Roof–windshield–hood relationship, greenhouse taper, beltline/shoulders, front/rear width and overhangs | Coherent contours across governing views; neutral surface read |
-| 4. Connected interfaces | One representative wheel arch WITH adjacent body and flare; cab-to-bed transition | Local section/junction plus surrounding full contour, no floating ends or exposed unintended returns; review before replication |
-| 5. Openings and thickness | Actual window boundaries/pillars, bed cavity, arch inner returns and required panel thickness | Openings unobstructed by other parts; thickness does not damage silhouette |
-| 6. Visible assembly | Scoped wheel supports/suspension, bumper/underside masses, plausible attachment to chassis | Wheels visibly connected; coherent stance/contact; static or motion evidence as agreed |
+| 3. Primary body form | Central body/tub, nose/rear deck, canopy, side pods and fender volumes; no spoiler, springs or finished wheels | Coherent body character in front/side/top/three-quarter with proxies only; upper/lower contours and side-pod/character lines |
+| 4. Body details | Fenders/arch lips, spoiler/wing, bumpers, panel lines, vents, windows and livery-registration surfaces; test one representative arch/fender/body interface | Local interface plus surrounding full contour; openings/thickness; no floating ends or exposed unintended returns; review before replication |
+| 5. Running gear | Suspension arms, springs/shocks, drivetrain and underside; use the fixed wheel datums | Wheels visibly supported; shock/arm endpoints seated; coherent stance/contact; no body/arm intersections hidden by filler |
+| 6. Final wheels and tyres | Finished wheel assemblies last; replace proxies; check ground contact, clearance and rotation | Whole vehicle with final wheels; both sides/front/rear/underside; no proxy remains |
 | 7. Shape approval | Whole vehicle with all required geometry present | Neutral multi-view/reference comparison and explicit user gate where required |
 | 8. Optimization, then later appearance/delivery | Separately scoped high-to-low, retopology, baking or LOD work as needed | Preserve approved silhouette and interfaces; delivery/runtime require their own approval |
+
+**Why final wheels last (2026-10-26):** wheel proxies establish stance early, but finished
+tyres and rims obscure the arch, arm and shock interfaces and invite detail work before the
+body character is resolved. The RC-car pass built springs and running gear while the body
+still read as a generic smooth egg; the result was detailed but unconvincing. Treat the
+body silhouette and side-pod/character lines as the primary gate, then body details, then
+running gear, then final wheels. This is a working heuristic, not a universal law: a
+wheel-led design or an approved fit problem may justify bringing final wheels forward, but
+record why and keep the body gate.
 
 Rough windows, arch gaps and provisional thickness may be necessary during the
 blockout to judge the form. Do not postpone a defining opening until after accepting
@@ -84,6 +93,18 @@ before/after cameras: those establish edit comparison, not source calibration.
   — discovered resource; video content not reviewed here.
 - [3D Cars: Inside and Out in Blender](https://superhivemarket.com/products/3d-cars-inside-and-out-in-blender)
   — paid course option; lessons not evaluated here.
+
+External beginner/industry guides consistently describe blockout → detailed modeling →
+texturing, but they do not settle final-wheel timing. The body-first/final-wheels-last
+order above is a local heuristic from the 2026-10-26 RC-car pass, where running-gear
+detail outpaced the unresolved body character.
+
+Local evidence limit: the RC-car pass then tried smooth lofts (v3–v10) and a manual
+16-station cage with Subdivision/creases, glazing and a red front assembly (v11–v12).
+The order was followed, but the body still did not reach reference fidelity; it remained
+a smooth pod with crude fitted details. The body-first order is still sensible, but it is
+not sufficient by itself. A detailed product buggy needs skilled manual cage/sculpt work
+or a different modelling tool/operator; the vehicles module remains unvalidated.
 
 Local motivation: the truck pilot's isolated flare edits exposed a pre-existing
 body return, and a later tip-only re-seat introduced a hook without removing the

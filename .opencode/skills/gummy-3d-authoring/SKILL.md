@@ -127,6 +127,7 @@ authorised; none is bundled here.
 | Reference-faithful/measured matching | Reference review, then handbook “Reference calibration” and “Direct comparison with reference planes” |
 | Material-only change | [PBR](references/pbr-materials.md); preserve geometry and unrelated assignments; historical diagnosis notes only if needed (`docs/legacy/authoring-handbook-archived-sections.md`) |
 | UV template/island delivery | [UV templates](references/uv-template-delivery.md), [UV islands](references/uv-island-export.md) only as requested |
+| Qwen/StableMaterials texture generation | [UV island export](references/uv-island-export.md) first: name the current islands, review the guide, then use that layout as the generation canvas. Never generate before the UV work; applies to every workflow |
 | Bake/atlas | [Baking](references/texture-baking.md), [atlas delivery](references/atlas-delivery.md) |
 | Geometry Nodes | [Geometry Nodes](references/geometry-nodes.md) |
 | Libraries/generation | [Asset libraries](references/asset-libraries.md); approval before paid generation |

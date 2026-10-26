@@ -15,6 +15,44 @@ Operating notes for the StableMaterials and Qwen runners, and for applying gener
 PBR maps in Blender. This file holds the details and the failure modes; `AGENTS.md`
 and the authoring skill keep only the rules and point here.
 
+## Precondition: UV islands before Qwen
+
+**Project-wide rule, all workflows.** Do not generate a Qwen texture for an asset
+surface before the UV work exists. The required order is:
+
+1. Build or assign the UV layout for the surface.
+2. Export a current named-island guide with the vendored UV tooling
+   (`tools/uv-layout-extractor/` and/or `scripts/uv_island_export.py`).
+3. Review the guide: island count, names, bounds, overlaps and the tags the Qwen
+   prompt will use.
+4. Use that guide/layout as the Qwen canvas (`<image1>`), naming each island and the
+   detail it should receive.
+5. Apply the returned image through the same reviewed UV layout; treat the raw
+   output as artwork until that placement and the material wiring are verified.
+
+A Qwen run against an un-unwrapped, packed-away or unnamed surface is not a valid
+texture pass. It produces an unplaceable image and cannot certify the result. Stop
+and return the UV step as a blocker; do not invent island names or paint around a
+missing layout. This rule applies to one-off stickers, label films, livery atlases
+and any future material workflow.
+
+### Multi-island Qwen canvases
+
+A single labelled atlas with many islands is not a reliable placement contract. In the
+2026-10-26 RC-car livery pass, Qwen painted only one flank's mouth and wordmark, put the
+mouth at the tail, and assigned endplate/panel colours to the wrong islands despite
+explicit per-island instructions. Treat raw output as artwork: inspect every named island
+on the model, prefer one focused canvas per side or part for direction-dependent art, and
+repair the rest deterministically through the same UV layout. Keep a scripted
+text/wordmark fallback for legibility.
+
+### StableMaterials colour drift
+
+Generated base colours can be far from the authored target (blue-grey "black", neon red).
+Grade the base colour with a script against the authored look, keep the generated
+normal/roughness/metallic maps, and do not regenerate solely for colour. Record the
+grading and judge the result in the scene under neutral, non-blown lighting.
+
 ## Separate image-resolution node and user-tested API graph
 
 The user reports successful image-conditioned generation with the separate node

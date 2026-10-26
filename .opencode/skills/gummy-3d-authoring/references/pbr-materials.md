@@ -100,12 +100,30 @@ nodes do not become glTF materials; bake them to textures first.
   `surface_render_method`. `DITHERED` and `BLENDED` are viewport/render methods. A material
   can export as `BLEND` when it looks dithered in Blender. Inspect the GLB `alphaMode` and
   cutoff when alpha matters.
+- Clearcoat exports through `KHR_materials_clearcoat` (observed in the 2026-10-26 RC-car
+  GLB). Check `extensionsUsed` and target support; clearcoat normal/roughness are separate
+  from the base normal map.
 - Prefer opaque materials where possible. Alpha blending has sorting and performance costs
   in three.js and other engines.
 - Use power-of-two textures for game assets where practical. Keep PNG/PNG-like lossless data
   for normal maps; JPEG artifacts in normals are visible.
 - One material per texture set is the default. Each extra material slot is a potential draw
   call; do not merge materials across large culling boundaries just to reduce the count.
+
+### Interchange export of coordinate-mapped textures
+
+Blender **Object**/**Generated** texture coordinates and Mapping nodes are not portable to
+glTF or FBX. A material can look correct in Blender and still export flat, stretched or
+badly tiled. Before export, either bake the spatial result into UV textures or rewire the
+image textures to the `UVMap` layer (with a simple UV Mapping node where the exporter
+supports it), and keep the source scene's look-dev wiring unchanged. Do not claim material
+portability from the Blender viewport.
+
+Observed in Blender 5.2.3 (2026-10-26 RC-car pass): FBX `path_mode='COPY'` plus
+`embed_textures=True` embedded PNG data; `AUTO` and `STRIP` left absolute source paths and
+no embedded images. Re-import FBX and GLB and inspect names, materials, images, bounds and
+a rendered view; a successful export operator return is not a portable file. For GLB,
+check the embedded `images`/buffer data rather than assuming textures were packed.
 
 ## Normal maps
 

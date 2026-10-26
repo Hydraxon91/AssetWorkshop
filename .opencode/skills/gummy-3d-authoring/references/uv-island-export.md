@@ -3,6 +3,15 @@
 Project policy for turning a finished UV layout into machine-readable paint guides. Supplements
 the parent skill, the modelling contract and `AGENTS.md`; it adds no authorization.
 
+## Qwen precondition
+
+Do not submit a Qwen image-edit/generation job until the UV layout for the target
+surface exists, its islands are named, and a reviewed line guide or layout image is
+available to use as the canvas. The prompt must name the islands and the detail each
+one should receive. Raw Qwen output is artwork, not an unwrap, island map or placement
+proof; apply it through the same reviewed layout and verify the result. This is a
+project-wide rule for every asset workflow, not only sticker sheets.
+
 ## Combined versus true atlas
 
 Default output is **one combined sheet** in the requested UV space: unique ids across all
