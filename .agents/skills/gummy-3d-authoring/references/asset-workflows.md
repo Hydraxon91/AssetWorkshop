@@ -30,7 +30,7 @@ textures require separate interpretation; the report does not resolve those for 
 From the repository root, inspect an already-approved export:
 
 ```sh
-python3 .opencode/skills/gummy-3d-authoring/scripts/glb_report.py path/to/asset.glb
+python3 .agents/skills/gummy-3d-authoring/scripts/glb_report.py path/to/asset.glb
 ```
 
 Report vertex accessor counts both per unique mesh primitive and per node instance.
@@ -217,7 +217,7 @@ delivery copies.
 Run the isolated fixtures from the repository root (no live scene is opened or saved):
 
 ```sh
-"<blender>" --background --factory-startup --python-exit-code 1 --python .opencode/skills/gummy-3d-authoring/scripts/test_helpers.py
+"<blender>" --background --factory-startup --python-exit-code 1 --python .agents/skills/gummy-3d-authoring/scripts/test_helpers.py
 ```
 
 Replace `<blender>` with the configured executable (on this workspace,

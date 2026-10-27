@@ -37,6 +37,11 @@ opening dimensions and roof pitch where known. Mark estimates. Decide exterior-o
 visible interior, cutaway or walkthrough. Identify moving doors, modular repetition,
 collision requirements and intended camera distance without assuming game integration.
 
+For exterior-only stylized houses, layered applied window bays are acceptable when the
+frame has real depth and a dark recess. Record whether each opening is cut or applied.
+Applied bays do not prove wall thickness, interior coverage, real reveals or weather
+closure.
+
 ## 2. Choose a method by structure
 
 | If… | Start with… | Watch for… |
@@ -62,6 +67,12 @@ texture cannot replace an opening, reveal or roof overhang visible at the intend
 5. Test the module's repeated seam and material/UV behaviour before replication.
    Test moving doors with hinges and clearance if movement is required.
 
+**Glazed openings:** build each pane from one simple closed boundary and keep the arch
+winding consistent with the springing. Check for profile self-intersection before adding
+frames. Inset glass ~10–20 mm from the frame/reveal; never give a pane and its opening
+the same outer boundary. Keep backing/recess planes separate. Inspect a close-up in the
+viewport and in the final render engine.
+
 **Editable controls:** plan dimensions, levels, wall thickness, opening bounds, roof
 profiles, overhang, module spacing and pivots. Keep furnishing independent of the shell.
 Use trim for actual trim, not to conceal failed wall/roof connections.
@@ -73,6 +84,9 @@ Use trim for actual trim, not to conceal failed wall/roof connections.
 | Interior works but outside corner is open | Wall returns and junction coverage | Isolated top/exterior view of that corner |
 | Flicker at repeated seams | Coincident faces and ownership | Correct one module boundary; do not just offset the whole facade |
 | Window is a dark rectangle with no depth | Opening, reveals and pane placement | Oblique interior/exterior close-up |
+| Diagonal shimmer or flicker inside a glass pane | Profile winding/self-intersection; coincident pane, reveal, frame or backing faces | Rebuild one simple profile; inset the pane; re-render a close-up |
+| Z-fighting in the viewport but clean in the final render | Coplanar/overlapping surfaces and viewport depth precision | Fix the geometry, not the engine or shading |
+| Open underside when the building is lifted | Floor/base closure | Add a floor slab/plinth, or explicitly record an exterior-only open boundary |
 | Roof floats or penetrates walls | Evaluated eave/wall geometry | Fit the roof junction without distorting approved elevations |
 | Unexplained changes across copies | Shared mesh/material users | Diagnose sharing before changing the source module |
 
@@ -87,3 +101,28 @@ Check footprint/elevations, wall/floor/roof continuity, required interior covera
 opening thickness separately. A front facade render does not prove a complete building.
 Report deliberate cutaway/open boundaries distinctly from unexpected mesh defects.
 Game collision, navigation, lighting performance and integration are separate tasks.
+
+## Field record — one stylized exterior (2026-10-27), not a verification
+
+Applied to a reference-led Frutiger Aero villa: reference-plane blockout, curved white
+massing, a central roof drum, arched glazing, a sculpted entrance canopy, ring
+balconies, chrome bands, a recessed rear curtain wall and an exterior-only landscape
+look. The pass exercised the guide's massing, opening, frame, trim and whole-view
+inspection guidance. It also exposed a failure: six arched glass panes had a
+self-intersecting profile and shared boundaries with their openings, producing
+z-fighting after first delivery. Rebuilding the profiles and insetting the panes fixed
+it.
+
+What the pass supports: using the guide for a stylized exterior massing and glazing
+study; treating a perspective/AI reference as a qualitative guide; and checking a
+glazed close-up separately from the whole-building view.
+
+Limits: one asset, one operator pass, no independent second building; no interior,
+cutaway or walkthrough; no measured plan, wall-thickness or opening-clearance proof;
+no repeated-module, moving-door, roof/eave or game-runtime test; no junction-first
+proof before expansion. The initial z-fighting was found only after delivery, and the
+user subsequently made cosmetic and z-fighting edits. Evidence:
+`.dev-shots/frutiger-aero-house-02/brief.md` and
+`artifacts/frutiger-aero-villa-house-only-v1/`.
+
+This is a field record, not a verification. The module remains unvalidated.

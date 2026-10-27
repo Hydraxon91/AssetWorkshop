@@ -901,7 +901,7 @@ The Blender fixtures run two passes:
 
 The audit imports existing project helpers from:
 
-- `.opencode/skills/gummy-3d-authoring/scripts/`
+- `.agents/skills/gummy-3d-authoring/scripts/`
 - `tools/uv-layout-extractor/scripts/`
 
 It does not modify or vendor those helpers. Use `--helper-dir` only if the helper

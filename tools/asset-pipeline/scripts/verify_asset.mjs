@@ -16,7 +16,7 @@ import { capturePreview } from './preview_capture.mjs';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const SKILL_GLB_REPORT = join(
-  ROOT, '.opencode', 'skills', 'gummy-3d-authoring', 'scripts', 'glb_report.py');
+  ROOT, '.agents', 'skills', 'gummy-3d-authoring', 'scripts', 'glb_report.py');
 const CLEAN_IMPORT = join(
   ROOT, 'tools', 'asset-pipeline', 'scripts', 'clean_import.py');
 const DEFAULT_BLENDER = '/Applications/Blender.app/Contents/MacOS/Blender';

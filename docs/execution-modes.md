@@ -82,7 +82,7 @@ Use the first matching line:
 
 - Safety, ownership and approvals: [`AGENTS.md`](../AGENTS.md).
 - Progression, review level and evidence matrix:
-  [`references/stage-review.md`](../.opencode/skills/gummy-3d-authoring/references/stage-review.md).
+  [`references/stage-review.md`](../.agents/skills/gummy-3d-authoring/references/stage-review.md).
 - Current live owner: [`BLENDER_OWNER.md`](../BLENDER_OWNER.md).
 - Actual MCP tool names: [`docs/mcp-tools.md`](mcp-tools.md).
 - Approved operator: [`docs/operators.md`](operators.md).

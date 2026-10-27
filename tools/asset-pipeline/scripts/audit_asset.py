@@ -51,7 +51,7 @@ def load_module(name, path):
 def load_helpers(helper_dir=None):
     root = repo_root()
     skill_dir = Path(helper_dir) if helper_dir else (
-        root / ".opencode" / "skills" / "gummy-3d-authoring" / "scripts")
+        root / ".agents" / "skills" / "gummy-3d-authoring" / "scripts")
     extractor_dir = root / "tools" / "uv-layout-extractor" / "scripts"
     if str(extractor_dir) not in sys.path:
         sys.path.insert(0, str(extractor_dir))

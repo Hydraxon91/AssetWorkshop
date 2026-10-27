@@ -22,7 +22,7 @@ ownership is the current card in `BLENDER_OWNER.md`.
 
 Evidence root: `.dev-shots/car_img2-01/gate1-ultrafast-01/` (ignored local artifacts).
 Policy remains in AGENTS.md/stage-review; the task-specific checklist is
-[editability verification](../.opencode/skills/gummy-3d-authoring/references/editability-verification.md).
+[editability verification](../.agents/skills/gummy-3d-authoring/references/editability-verification.md).
 
 | Observed failure / evidence | Reusable correction |
 | --- | --- |

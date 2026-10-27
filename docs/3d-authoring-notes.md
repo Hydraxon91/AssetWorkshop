@@ -1,7 +1,7 @@
 # 3D authoring notes
 
 Case histories, measurements and coverage records that inform the procedures in
-`.opencode/skills/gummy-3d-authoring/SKILL.md`. The skill routes what to do; this file
+`.agents/skills/gummy-3d-authoring/SKILL.md`. The skill routes what to do; this file
 holds the evidence behind it. Neither is user acceptance.
 
 ## Island inventory before hiding or editing a component

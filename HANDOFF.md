@@ -40,7 +40,7 @@ Updated 2026-10-26. Orientation only; AGENTS.md owns safety/authorization.
 | Path | Role |
 | --- | --- |
 | `.opencode/agents/` | Bounded modeller, read-only reviewer, and a non-production `probe-ladder` diagnostic |
-| `.opencode/skills/gummy-3d-authoring/` | Stage/task router and on-demand references |
+| `.agents/skills/gummy-3d-authoring/` | Stage/task router and on-demand references |
 | `docs/execution-modes.md` | Scripted-disposable vs live-MCP authority |
 | `docs/mcp-tools.md` | Actual configured MCP tools and read-only/mutating capabilities |
 | `docs/operators.md` | Approved model/agent operator identities |
